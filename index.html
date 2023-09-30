@@ -64,11 +64,13 @@
       <div class="container">
         <h1>logo</h1>
         <nav>
-          <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">About</a></li>
-            <li><a href="">Work</a></li>
-            <li><a href="">Contact</a></li>
+          <ul id="menu">
+            <li data-menuanchor="firstPage"><a href="#firstPage">Home</a></li>
+            <li data-menuanchor="secondPage">
+              <a href="#secondPage">About</a>
+            </li>
+            <li data-menuanchor="3rdPage"><a href="#3rdPage">Work</a></li>
+            <li data-menuanchor="4thpage"><a href="#4thpage">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -266,7 +268,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-4 ">
+            <div class="col-4">
               <img src="images/profile.png" alt="프로필 이미지" />
               <div>
                 <p class="libre info_name">Yu rim. Kim</p>
@@ -449,9 +451,124 @@
             </figure>
           </div>
         </div>
+
+        <div class="section sec_05 work" id="">
+          <div class="slide" data-anchor="slide1">
+            <div class="container">
+              <h2 class="libre">Team Projects</h2>
+              <div class="work_wrap">
+                <div class="work_info">
+                  <p class="number">1st. project</p>
+                  <h3>[Renewal] CJ CGV Static Web</h3>
+                  <h4><i class="bi bi-check"></i>프로젝트 소개</h4>
+                  <p>
+                    슬로건인 어쩌구,... 영화 예매와 관련
+                    정보제공이 주 목적인 CGV의 사이트를 사용자의 입장에서 더욱
+                    편리한 사용과, 깔끔한 UI에 중점을 두었습니다. 처음으로
+                    팀프로젝트 진행 및 웹 페이지를 제작했다는 것만으로도 의미가
+                    있었고, 시멘틱 태그를 준수하며, 기획과 목적에 맞게 리뉴얼에
+                    초점을 맞춰 진행했습니다. 처음 코딩을 접하여 학습 목적으로
+                    라이브러리 사용없이 순수 Vanilla Javascript로
+                    제작하였습니다.
+                  </p>
+                  <h4><i class="bi bi-check"></i>제작의도</h4>
+
+                  <p>UI 개선을 통한 기존 사이트 편의성 및 사용성 증진</p>
+                  <p>
+                    주 타겟층 2030세대를 겨냥한 트렌디한 디자인 반영
+                    (심미성개선)
+                  </p>
+                  <p>
+                    킬러 콘텐츠 + 공식 캐릭터 전략적 접목을 통한 brand loyalty및
+                    identity 강화
+                  </p>
+
+                  <h4><i class="bi bi-check"></i>주요기능</h4>
+
+                  <p>
+                    [ HTML ] Semantic Tag / 선형적 코딩 / Input & Search Field /
+                    웹 표준 & 웹 접근성 준수
+                  </p>
+                  <p>
+                    [ CSS ] float / position / Button / Card / Icon / Badge /
+                    Dropdown
+                  </p>
+                  <p>
+                    [ JavaScript ] Accordion / Modal / hover · click · scroll
+                    animation / Carousel
+                  </p>
+                  <h4><i class="bi bi-check"></i>팀 EDGE</h4>
+                  <p><span>총 인원</span>4명</p>
+                  <p><span>제작 기간</span>23. 05. 19 ~ 23. 07. 06</p>
+                  <h4><i class="bi bi-check"></i>Git / URL</h4>
+                  <p><a href="https://edgecgv.github.io/EDGE_RE/">https://edgecgv.github.io/EDGE_RE/</a></p>
+                </div>
+                <img src="images/work_01.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="intro">
+              <h1>Simple</h1>
+              <p>Easy to use. Configurable and customizable.</p>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="intro">
+              <h1>Cool</h1>
+              <p>
+                It just looks cool. Impress everybody with a simple and modern
+                web design!
+              </p>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="intro">
+              <h1>Compatible</h1>
+              <p>
+                Working in modern and old browsers too! IE 8 users don't have
+                the fault of using that horrible browser! Lets give them a
+                chance to see your site in a proper way!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="section sec_05 work normal-scroll" id="slideSection">
+          <div class="slide" data-anchor="slide1">
+            <h2 class="libre">Team Projects</h2>
+            <div class="work_info"></div>
+            <img src="images/work_01.png" alt="1차 프로젝트 이미지" />
+          </div>
+          <div class="slide" data-anchor="slide2">Two 2</div>
+        </div> -->
       </div>
+      <!-- <section class="work">
+        <img src="images/work_01.png" alt="">
+        <h2>Team Projects</h2>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error voluptates repellendus, tempore asperiores pariatur voluptatem laudantium in earum eligendi! Quae, rerum obcaecati libero voluptatum esse nesciunt? Molestias perspiciatis repellat enim.
+
+      </section> -->
     </main>
-    <footer></footer>
+    <footer>
+      <div class="container">
+        <div class="footer_wrap">
+          <div class="sec_05_wrap">
+            <h2 class="title_01 libre">Contact</h2>
+            <p>
+              프로젝트 협업, 간단한 상담이나 문의 사항이 있다면 언제든지 연락
+              주세요!
+            </p>
+            <a href="mailto:kplhn6@gmail.com" class="contact_btn">Contact Me</a>
+          </div>
+          <p class="libre">© 2023 Kim Yurim All rights reserved</p>
+          <ul>
+            <li><a href="">Privacy Policy</a></li>
+            <li><a href="">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
 
     <!-- bootstrap -->
     <script
