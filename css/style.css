@@ -1,0 +1,438 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@400;500&family=Orelega+One&display=swap");
+
+/* font-family: 'Libre Bodoni', serif;
+font-family: 'Orelega One', cursive; */
+
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --point_blue01: #4174d8;
+  --point_blue02: #48609e;
+  --fale_blue: #bccbde;
+  --dark: #1c1b1b;
+  --grey: #909090;
+}
+body {
+  font-family: "Pretendard-Regular";
+  color: var(--dark, #1c1b1b);
+  background: #f4f4f4;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+dl,
+ol,
+ul {
+  margin-bottom: 0;
+  padding-left: 0;
+}
+/* typograpy */
+.con_tt {
+  font-family: "Libre Bodoni", serif;
+  font-size: 80px;
+  margin-top: 160px;
+}
+.libre {
+  font-family: "Libre Bodoni", serif;
+}
+main {
+  position: relative;
+  z-index: 1;
+}
+header {
+  background: #f4f4f4;
+}
+header > div {
+  height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 10;
+}
+
+header ul {
+  display: flex;
+  gap: 0 52px;
+  align-items: center;
+}
+header ul li:hover {
+  font-weight: 700;
+}
+header ul li a {
+  display: block;
+  padding: 10px;
+}
+
+.container {
+  width: 1272px;
+}
+
+/* sec_01 */
+
+.title_01 {
+  font-size: 84px;
+  margin-top: 36px;
+  /* line-height: 72px;  */
+}
+.title_02 {
+  font-size: 72px;
+  margin-bottom: 20px;
+}
+.title_02 em {
+  color: #729cef;
+}
+
+.sec_01 p {
+  color: var(--grey, #909090);
+  font-size: 32px;
+  font-weight: 700;
+}
+.sec_01,
+.sec_02,
+.sec_03,
+.sec_04 {
+  height: calc(100vh - 72px);
+}
+.sec_01 span {
+  color: #454545;
+  font-size: 24px;
+  font-weight: 700;
+}
+.sec_01 span:first-child::after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  background: #000;
+}
+.scroll_wrap {
+  position: absolute;
+  left: 90%;
+  bottom: 100px;
+}
+.scroll {
+  animation: scroll_rotate 10s linear infinite;
+}
+@keyframes scroll_rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.scroll_wrap svg {
+  position: absolute;
+  z-index: 10;
+  left: 90%;
+  transform: translateX(-60px);
+  bottom: 40px;
+}
+.channel {
+  display: flex;
+  gap: 16px;
+  line-height: 44px;
+  text-align: center;
+  justify-content: center;
+  margin-top: 270px;
+}
+.channel li {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #e8e7ea;
+}
+.title_wrap {
+  position: relative;
+  left: -50px;
+  top: 70px;
+}
+/* sec_02 */
+.sec_02 {
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.sec_02 img {
+  width: 381px;
+  height: 248.167px;
+  /* margin: 58px 0 20px; */
+  margin-bottom: 20px;
+}
+.sec_02 h2 {
+  color: var(--fale_blue, #bccbde);
+  font-family: Orelega One;
+  font-size: 70px;
+  margin-bottom: 30px;
+}
+.sec_02 p span {
+  color: var(--point_blue, #4174d8);
+  font-weight: 600;
+}
+
+.sec_02 p {
+  font-size: 18px;
+}
+.sec_02 p:last-child {
+  font-size: 20px;
+}
+.sec_02 p em {
+  font-weight: 700;
+}
+
+/* sec_03 */
+.sec_03 h3 {
+  color: var(--text, #1c1b1b);
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 70px;
+  position: relative;
+  display: inline-block;
+}
+.sec_03 h3::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 40px;
+  background: url(../images/“.png) no-repeat;
+  left: -35px;
+  top: -5px;
+}
+.sec_03 h3::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 40px;
+  background: url(../images/”.png) no-repeat;
+  left: 100%;
+  top: -5px;
+}
+.sec_03 h3 span {
+  color: var(--point_blue, #4174d8);
+  font-weight: 700;
+}
+
+.sec_03 h4 {
+  font-family: "Libre Bodoni", serif;
+  color: #48609e;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+.sec_02 img {
+  transform: scale(0.7);
+}
+.about {
+  margin-bottom: 50px;
+}
+.about li,
+.my_info li {
+  font-size: 14px;
+  line-height: 24px;
+}
+.about li span,
+.my_info li span {
+  width: 85px;
+  font-weight: bold;
+  display: inline-block;
+}
+.info_name {
+  font-size: 40px;
+}
+.my_info i {
+  margin-right: 10px;
+}
+
+/* sec_04 */
+
+.chart figcaption {
+  position: absolute;
+  left: 50%;
+  margin-top: 10px;
+  transform: translateX(-50%);
+}
+.chart {
+  position: relative;
+  display: inline-block;
+}
+.chart img {
+  position: absolute;
+  left: 50%;
+  top: 32%;
+  transform: translate(-50%);
+}
+
+.chart .html,
+.chart .css,
+.chart .react {
+  top: 27%;
+}
+
+.chart .php {
+  top: 40%;
+}
+.outer {
+  fill: transparent;
+  stroke: #333;
+  stroke-width: 6;
+  stroke-dasharray: 534;
+  transition: stroke-dashoffset 1s;
+  -webkit-animation-play-state: running;
+
+  /* firefox bug fix - won't rotate at 90deg angles */
+  -moz-transform: rotate(-89deg) translateX(-190px);
+  stroke-linecap: round;
+}
+.html + svg .outer {
+  stroke: #f2aa92;
+}
+
+.css + svg .outer {
+  stroke: #89bae0;
+}
+
+.js + svg .outer {
+  stroke: #f8dc79;
+}
+
+.jquery + svg .outer {
+  stroke: #649cc5;
+}
+
+.react + svg .outer {
+  stroke: #afe7f6;
+}
+
+.php + svg .outer {
+  stroke: #8997af;
+}
+.ps + svg .outer {
+  stroke: #b1d0ea;
+}
+.ai + svg .outer {
+  stroke: #f9d296;
+}
+
+/* Set the initial values for the animation */
+.chart[data-percent="100"] .outer {
+  stroke-dashoffset: 0;
+  -webkit-animation: show100 2s;
+  animation: show100 2s;
+}
+
+.chart[data-percent="75"] .outer {
+  stroke-dashoffset: 133;
+  -webkit-animation: show75 2s;
+  animation: show75 2s;
+}
+
+.chart[data-percent="50"] .outer {
+  stroke-dashoffset: 267;
+  -webkit-animation: show50 2s;
+  animation: show50 2s;
+}
+
+.chart[data-percent="25"] .outer {
+  stroke-dashoffset: 401;
+  -webkit-animation: show25 2s;
+  animation: show25 2s;
+}
+/* END set initial animation values */
+
+/* Keyframes for the initial animation */
+@-webkit-keyframes show100 {
+  from {
+    stroke-dashoffset: 537;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes show100 {
+  from {
+    stroke-dashoffset: 537;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes show75 {
+  from {
+    stroke-dashoffset: 537;
+  }
+
+  to {
+    stroke-dashoffset: 134;
+  }
+}
+
+@keyframes show75 {
+  from {
+    stroke-dashoffset: 537;
+  }
+
+  to {
+    stroke-dashoffset: 124;
+  }
+}
+
+@-webkit-keyframes show50 {
+  from {
+    stroke-dashoffset: 537;
+  }
+
+  to {
+    stroke-dashoffset: 267;
+  }
+}
+
+@keyframes show50 {
+  from {
+    stroke-dashoffset: 537;
+  }
+
+  to {
+    stroke-dashoffset: 267;
+  }
+}
+
+@-webkit-keyframes show25 {
+  from {
+    stroke-dashoffset: 537;
+  }
+
+  to {
+    stroke-dashoffset: 401;
+  }
+}
+
+@keyframes show25 {
+  from {
+    stroke-dashoffset: 537;
+  }
+
+  to {
+    stroke-dashoffset: 401;
+  }
+}
+/* END Keyframes for the initial animation */
