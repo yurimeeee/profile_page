@@ -1,15 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@400;500&family=Orelega+One&display=swap");
-
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css");
 /* font-family: 'Libre Bodoni', serif;
 font-family: 'Orelega One', cursive; */
 
-@font-face {
+/* @font-face {
   font-family: "Pretendard-Regular";
   src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
     format("woff");
   font-weight: 400;
   font-style: normal;
-}
+} */
 
 :root {
   --point_blue01: #4174d8;
@@ -53,7 +53,7 @@ header {
 header > div {
   height: 72px;
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
   align-items: center;
   position: fixed;
   left: 0;
@@ -68,14 +68,14 @@ header ul {
   align-items: center;
 }
 header ul li:hover {
-  font-weight: 700;
+  font-weight: 500;
 }
 header ul li a {
   display: block;
   padding: 10px;
 }
-header ul li.active{
-  color:#fff;
+header ul li.active {
+  color: #fff;
 }
 .container {
   width: 1272px;
@@ -140,14 +140,14 @@ header ul li.active{
 .scroll_wrap svg {
   position: absolute;
   z-index: 10;
-  left: 90%;
+  left: 87%;
   transform: translateX(-60px);
   bottom: 40px;
 }
 .channel {
   display: flex;
   gap: 16px;
-  line-height: 44px;
+  line-height: 48px;
   text-align: center;
   justify-content: center;
   margin-top: 270px;
@@ -157,6 +157,15 @@ header ul li.active{
   height: 50px;
   border-radius: 50%;
   border: 1px solid #e8e7ea;
+  transition: 0.3s;
+}
+.channel li:hover {
+  background-color: #ececec;
+  color: #a1a1a1;
+}
+.channel li:hover path {
+  /* fill: #a1a1a1; */
+  /* border: #777676; */
 }
 .title_wrap {
   position: relative;
@@ -189,6 +198,7 @@ header ul li.active{
 
 .sec_02 p {
   font-size: 18px;
+  line-height: 1.7;
 }
 .sec_02 p:last-child {
   font-size: 20px;
@@ -251,7 +261,7 @@ header ul li.active{
 .about li span,
 .my_info li span {
   width: 85px;
-  font-weight: bold;
+  font-weight: 600;
   display: inline-block;
 }
 .info_name {
@@ -262,7 +272,18 @@ header ul li.active{
 }
 
 /* sec_04 */
-
+.skill_wrap {
+  height: 100%;
+}
+.skill_wrap > div {
+  display: flex;
+  width: 80%;
+  gap: 50px;
+  margin: 150px auto 0;
+}
+.sec_04 .con_tt {
+  margin-top: 200px;
+}
 .chart figcaption {
   position: absolute;
   left: 50%;
@@ -297,7 +318,6 @@ header ul li.active{
   transition: stroke-dashoffset 1s;
   -webkit-animation-play-state: running;
 
-  /* firefox bug fix - won't rotate at 90deg angles */
   -moz-transform: rotate(-89deg) translateX(-190px);
   stroke-linecap: round;
 }
@@ -331,23 +351,37 @@ header ul li.active{
   stroke: #f9d296;
 }
 
-/* Set the initial values for the animation */
-.chart[data-percent="100"] .outer {
-  stroke-dashoffset: 0;
-  -webkit-animation: show100 2s;
-  animation: show100 2s;
+/* 
+.chart[data-percent="90"] .outer {
+  stroke-dashoffset: 100;
+  -webkit-animation: show90 2s;
+  animation: show90 2s;
 }
-
+.chart[data-percent="85"] .outer {
+  stroke-dashoffset: 60;
+  -webkit-animation: show85 2s;
+  animation: show85 2s;
+}
+.chart[data-percent="80"] .outer {
+  stroke-dashoffset: 110;
+  -webkit-animation: show80 2s;
+  animation: show80 2s;
+}
 .chart[data-percent="75"] .outer {
   stroke-dashoffset: 133;
   -webkit-animation: show75 2s;
   animation: show75 2s;
 }
 
-.chart[data-percent="50"] .outer {
+.chart[data-percent="70"] .outer {
   stroke-dashoffset: 267;
-  -webkit-animation: show50 2s;
-  animation: show50 2s;
+  -webkit-animation: show70 2s;
+  animation: show70 2s;
+}
+.chart[data-percent="60"] .outer {
+  stroke-dashoffset: 267;
+  -webkit-animation: show60 2s;
+  animation: show60 2s;
 }
 
 .chart[data-percent="25"] .outer {
@@ -355,26 +389,34 @@ header ul li.active{
   -webkit-animation: show25 2s;
   animation: show25 2s;
 }
-/* END set initial animation values */
 
-/* Keyframes for the initial animation */
-@-webkit-keyframes show100 {
+
+@-webkit-keyframes show90 {
   from {
     stroke-dashoffset: 537;
   }
 
   to {
-    stroke-dashoffset: 0;
+    stroke-dashoffset: 100;
   }
 }
 
-@keyframes show100 {
+@keyframes show85 {
   from {
     stroke-dashoffset: 537;
   }
 
   to {
-    stroke-dashoffset: 0;
+    stroke-dashoffset: 100;
+  }
+}
+@keyframes show80 {
+  from {
+    stroke-dashoffset: 537;
+  }
+
+  to {
+    stroke-dashoffset: 100;
   }
 }
 
@@ -384,21 +426,21 @@ header ul li.active{
   }
 
   to {
-    stroke-dashoffset: 134;
+    stroke-dashoffset: 200;
   }
 }
 
-@keyframes show75 {
+@keyframes show70 {
   from {
     stroke-dashoffset: 537;
   }
 
   to {
-    stroke-dashoffset: 124;
+    stroke-dashoffset: 200;
   }
 }
 
-@-webkit-keyframes show50 {
+@-webkit-keyframes show60 {
   from {
     stroke-dashoffset: 537;
   }
@@ -408,7 +450,7 @@ header ul li.active{
   }
 }
 
-@keyframes show50 {
+@keyframes show60 {
   from {
     stroke-dashoffset: 537;
   }
@@ -436,11 +478,138 @@ header ul li.active{
   to {
     stroke-dashoffset: 401;
   }
-}
+} */
 /* END Keyframes for the initial animation */
 
+/* Set the initial values for the animation */
+/* .chart[data-percent="90"] .outer {
+  stroke-dashoffset: 537;
+  -webkit-animation: show90 2s;
+  animation: show90 2s;
+}
+.chart[data-percent="85"] .outer {
+  stroke-dashoffset: 537;
+  -webkit-animation: show85 2s;
+  animation: show85 2s;
+}
+.chart[data-percent="80"] .outer {
+  stroke-dashoffset: 537;
+  -webkit-animation: show80 2s;
+  animation: show80 2s;
+}
+.chart[data-percent="75"] .outer {
+  stroke-dashoffset: 537;
+  -webkit-animation: show75 2s;
+  animation: show75 2s;
+}
+.chart[data-percent="70"] .outer {
+  stroke-dashoffset: 537;
+  -webkit-animation: show70 2s;
+  animation: show70 2s;
+}
+.chart[data-percent="60"] .outer {
+  stroke-dashoffset: 537;
+  -webkit-animation: show60 2s;
+  animation: show60 2s;
+}
+.chart[data-percent="25"] .outer {
+  stroke-dashoffset: 537;
+  -webkit-animation: show25 2s;
+  animation: show25 2s;
+} */
+/* END set initial animation values */
+
+/* Keyframes for the initial animation */
+/* @-webkit-keyframes show90 {
+  from {
+    stroke-dashoffset: 537;
+  }
+  to {
+    stroke-dashoffset: 100;
+  }
+}
+
+@keyframes show85 {
+  from {
+    stroke-dashoffset: 537;
+  }
+  to {
+    stroke-dashoffset: 60;
+  }
+}
+@keyframes show80 {
+  from {
+    stroke-dashoffset: 537;
+  }
+  to {
+    stroke-dashoffset: 110;
+  }
+}
+@-webkit-keyframes show75 {
+  from {
+    stroke-dashoffset: 537;
+  }
+  to {
+    stroke-dashoffset: 133;
+  }
+}
+
+@keyframes show70 {
+  from {
+    stroke-dashoffset: 537;
+  }
+  to {
+    stroke-dashoffset: 267;
+  }
+}
+
+@-webkit-keyframes show60 {
+  from {
+    stroke-dashoffset: 537;
+  }
+  to {
+    stroke-dashoffset: 267;
+  }
+}
+
+@keyframes show60 {
+  from {
+    stroke-dashoffset: 537;
+  }
+  to {
+    stroke-dashoffset: 267;
+  }
+}
+
+@-webkit-keyframes show25 {
+  from {
+    stroke-dashoffset: 537;
+  }
+  to {
+    stroke-dashoffset: 401;
+  }
+}
+
+@keyframes show25 {
+  from {
+    stroke-dashoffset: 537;
+  }
+  to {
+    stroke-dashoffset: 401;
+  }
+} */
+
+.chart svg .outer {
+  /* fill: #ebebeb; */
+  /* stroke-width: 20; */
+  stroke-dasharray: 537px;
+  stroke-dashoffset: 537px;
+  /* stroke-linecap: round; */
+  /* transition: 0.1s; */
+}
+
 /* work */
-.sec_05{
+.sec_05 {
   padding-top: 100px;
 }
 .work {
@@ -452,14 +621,21 @@ header ul li.active{
 }
 .sec_05 .fp-tableCell {
   height: 100vh !important;
+  vertical-align: 0;
 }
-.work_wrap {
+.w_slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+/* .work_wrap {
   display: flex;
   justify-content: space-between;
-}
+} */
 .slide img {
-  width: 500px;
-  /* height: 1297px; */
+  width: 50%;
+  object-fit: cover;
 }
 .work_info {
   margin-top: 35px;
@@ -494,7 +670,7 @@ header ul li.active{
 p {
   margin-bottom: 0;
 }
-.work_info p > span{
+.work_info p > span {
   display: inline-block;
   width: 85px;
   font-weight: bold;
@@ -514,4 +690,47 @@ p {
   height: 70px;
   background: url(../images/chevron-right.png) no-repeat center/cover;
   border-width: 0;
+}
+
+/* footer */
+.sec_06 {
+  position: relative;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 264px;
+  background: #fff;
+  color: var(--grey);
+  font-size: 14px;
+}
+.footer i {
+  margin-right: 10px;
+}
+.footer_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.f_info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 35px;
+}
+.f_info p {
+  color: #78899f;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.f_info a {
+  line-height: 25px;
+}
+.sec_06 .channel {
+  margin-top: 50px;
+}
+.rights {
+  margin-top: 70px;
 }
