@@ -31,20 +31,47 @@ $(document).ready(function () {
       // } 
     }
   });
-  
-
-
   // let menu = document.querySelectorAll("#menu li");
+  /*
+  function toggleMenu(entries) {
+    // let hasActive = menu.classList.contains('active');
+  
+    // 'active' 클래스가 있으면 'menuChange' 클래스를 추가하고, 없으면 'menuChange' 클래스를 제거
+    entries.forEach((entry) => {
+    if (entry.classList.contains('active')) {
+      menu.forEach((item) => item.classList.add("menuChange"));;
+    } else {
+      menu.forEach((item) => item.classList.remove("menuChange"));
+    }
+  });
+  }
+  */
 
-  // function handleIntersection(entries) {
+  // function toggleMenu(entries) {
   //   entries.forEach((entry) => {
-  //     if (entry.isIntersecting) {
-  //       menu.forEach((item) => item.classList.add("menuChange"));
+  //     if (entry.classList.contains('active')) {
+  //       menu.forEach((item) => item.classList.add("menuChange"));;
   //     } else {
   //       menu.forEach((item) => item.classList.remove("menuChange"));
   //     }
   //   });
   // }
+  // 함수 호출 예시
+  // toggleMenu();
+  
+
+
+  // let menu = document.querySelectorAll("#menu li");
+
+  function handleIntersection(entries) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        menu.forEach((item) => item.classList.add("menuChange"));
+      } else {
+        menu.forEach((item) => item.classList.remove("menuChange"));
+      }
+    });
+  }
 
   // var options = {
   //   root: null,
@@ -54,12 +81,10 @@ $(document).ready(function () {
   // var observer = new IntersectionObserver(handleIntersection, options);
   // observer.observe(work);
 
-
-  /*
   let chart = document.querySelectorAll(".chart");
 
   function chartAnimation() {
-    chart.each(function () {
+    chart.forEach(function () {
       let $this = $(this);
       // let title = $this.find("h2");
       let targetNum = $this.attr("data-percent");
@@ -79,29 +104,6 @@ $(document).ready(function () {
       );
     });
   }
-*/
+
   
-let chart = document.querySelectorAll(".chart");
-
-function chartAnimation() {
-  chart.forEach(function (element) {
-    let $this = $(element);
-    let targetNum = $this.attr("data-percent");
-    let targetSVG = $this.find(".outer");
-
-    $({ num: 0 }).animate(
-      { num: targetNum },
-      {
-        duration: 1500,
-        step: function () {
-          let now = Math.ceil(this.num);
-          let value = 235 - (235 * now) / 100;
-          targetSVG.css({ strokeDashoffset: value });
-        },
-      }
-    );
-  });
-}
-
-
 });
