@@ -1,5 +1,4 @@
 (function () {
-
   let isChartOn = true;
 
   function scrollHandler() {
@@ -51,6 +50,31 @@
 });
 
 */
+
+  // top btn
+  let topBtn = document.querySelector(".top_btn a");
+
+  window.addEventListener("scroll", () => {
+    // e.preventDefault();
+    // let topBtnOST = topBtn.scrollTop();
+    let topBtnOST = window.scrollY || document.documentElement.scrollTop;
+
+    if (topBtnOST > 500) {
+      topBtn.classList.add("active");
+    } else {
+      topBtn.classList.remove("active");
+    }
+    topBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      $("html, body").stop().animate(
+        {
+          scrollTop: 0,
+        },
+        "easeInCubic"
+      );
+    });
+  });
+
   ("use strict");
 
   // iPad and iPod detection
