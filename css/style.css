@@ -831,6 +831,9 @@ em {
 } /* (max-width: 768px) end */
 
 @media screen and (max-width: 480px) {
+  #home {
+    padding: 10em 0 5em;
+  }
   .bold {
     font-size: 60px;
   }
