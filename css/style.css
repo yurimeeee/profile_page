@@ -272,6 +272,9 @@ em {
   left: 102%;
   top: 0px;
 }
+.about_channel a {
+  margin-right: 10px;
+}
 .my_info {
   margin-top: 30px;
   padding-left: 50px;
@@ -419,6 +422,7 @@ em {
   text-align: center;
   font-family: "Karla", Arial, sans-serif;
   margin-top: 8px;
+  font-size: 16px;
 }
 
 .chart {
@@ -726,6 +730,65 @@ em {
   margin-top: 70px;
 }
 
+/* subpage */
+.bold.z1 {
+  z-index: -11;
+}
+.z5 {
+  position: relative;
+  z-index: 5;
+}
+.project_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.project_wrap h3 {
+  color: #48609e;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.work_entry.project_wrap p {
+  color: var(--text, #1c1b1b);
+  font-size: 16px;
+  line-height: 1.6; /* 22.054px */
+}
+.project_img {
+  width: 100%;
+  object-fit: cover;
+  margin: 0 auto 40px;
+  box-shadow: 2px 5px 14px 0px rgba(116, 120, 128, 0.15);
+}
+.work_entry.project_wrap p {
+  color: var(--text, #1c1b1b);
+  font-size: 16px;
+  line-height: 1.6;
+}
+.project_wrap h3 ~ h3 {
+  margin-top: 25px;
+}
+.underline {
+  text-decoration: underline;
+}
+.sub_img {
+  width: 50%;
+  box-shadow: 2px 5px 14px 0px rgba(116, 120, 128, 0.15);
+}
+.sub_wrap .project_img {
+  margin: 0 auto 10px;
+}
+.sub_wrap p {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 20px;
+  height: 32px;
+  color: rgb(128, 128, 128);
+  text-decoration: underline;
+}
+
 @media screen and (max-width: 768px) {
   .bold {
     font-size: 60px;
@@ -753,6 +816,9 @@ em {
   }
   .contact_tt {
     width: 70%;
+  }
+  .sub_img {
+    width: 80%;
   }
 } /* (max-width: 768px) end */
 
@@ -792,6 +858,9 @@ em {
   }
   .contact_tt {
     width: 70%;
+  }
+  .sub_img {
+    width: 80%;
   }
 }
 
