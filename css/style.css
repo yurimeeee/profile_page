@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@400;500&family=Orelega+One&display=swap");
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css");
+/* @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css"); */
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap");
 /* font-family: 'Libre Bodoni', serif;
 font-family: 'Orelega One', cursive; */
+/* font-family: 'Plus Jakarta Sans', sans-serif; */
 
 /* @font-face {
   font-family: "Pretendard-Regular";
@@ -22,7 +24,8 @@ html {
   font-size: 62.5%;
 }
 body {
-  font-family: "Pretendard-Regular";
+  font-family: "Plus Jakarta Sans", sans-serif;
+  /* font-family: "Pretendard-Regular"; */
   /* color: var(--dark, #1c1b1b); */
   /* background: #f4f4f4; */
   background: #fafafa;
@@ -58,7 +61,8 @@ p,
 span {
   margin-bottom: 1.5em;
   font-weight: 400;
-  font-family: "Karla", Arial, sans-serif;
+  /* font-family: "Karla", Arial, sans-serif; */
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 p {
   font-size: 1.6rem;
@@ -140,7 +144,7 @@ p {
 #home p {
   color: var(--grey, #909090);
   font-size: max(2rem, min(5vw, 3.2rem));
-  font-weight: 700;
+  font-weight: 500;
   margin-bottom: 0;
 }
 
@@ -333,7 +337,8 @@ em {
   left: 30px;
 }
 .about_desc .rotate .heading {
-  font-family: "Karla", Arial, sans-serif;
+  /* font-family: "Karla", Arial, sans-serif; */
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 1em;
@@ -367,7 +372,8 @@ em {
   left: -50px;
 }
 .rotate .heading {
-  font-family: "Karla", Arial, sans-serif;
+  /* font-family: "Karla", Arial, sans-serif; */
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 1em;
@@ -426,7 +432,8 @@ em {
 }
 .chart figcaption {
   text-align: center;
-  font-family: "Karla", Arial, sans-serif;
+  /* font-family: "Karla", Arial, sans-serif; */
+  font-family: "Plus Jakarta Sans", sans-serif;
   margin-top: 8px;
   font-size: 16px;
 }
@@ -439,10 +446,11 @@ em {
 .chart:hover {
   transform: translateY(-15px);
 }
-.chart img {
+/* .chart img { */
+.chart .sk_icon {
   position: absolute;
   left: 50%;
-  top: 25%;
+  top: 22%;
   transform: translate(-50%);
 }
 
@@ -687,6 +695,10 @@ em {
 .sec_06 {
   padding-top: 140px;
 }
+.f_info p.lets {
+  font-size: 36px;
+  font-weight: 400;
+}
 .channel {
   display: flex;
   gap: 16px;
@@ -722,12 +734,14 @@ em {
 }
 .f_info p {
   color: #78899f;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 600;
   margin-bottom: 20px;
 }
 .f_info a {
   line-height: 25px;
+  font-size: 16px;
+  text-align: center;
 }
 .sec_06 .channel {
   margin-top: 50px;
@@ -736,6 +750,7 @@ em {
   margin-top: 70px;
   padding: 12px 0;
   background: #f2f2f2;
+  font-size: 14px;
 }
 
 /* subpage */
@@ -867,6 +882,7 @@ em {
   .chart .js {
     left: 45%;
   }
+
   .intro_heading h2 {
     margin-bottom: 1em;
   }
