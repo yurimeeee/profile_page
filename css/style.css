@@ -903,3 +903,10 @@ em {
 .js .animate-box {
   opacity: 0;
 }
+.my_part a {
+  text-decoration: underline;
+}
+.contribute {
+  margin-left: 10px;
+  color: #426dc3;
+}
