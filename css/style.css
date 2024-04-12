@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@400;500&family=Orelega+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@400;500&family=Orelega+One&display=swap');
 /* @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css"); */
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap');
 /* font-family: 'Libre Bodoni', serif;
 font-family: 'Orelega One', cursive; */
 /* font-family: 'Plus Jakarta Sans', sans-serif; */
@@ -24,7 +24,7 @@ html {
   font-size: 62.5%;
 }
 body {
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   /* font-family: "Pretendard-Regular"; */
   /* color: var(--dark, #1c1b1b); */
   /* background: #f4f4f4; */
@@ -44,13 +44,13 @@ ul {
 
 /* typograpy */
 .con_tt {
-  font-family: "Libre Bodoni", serif;
+  font-family: 'Libre Bodoni', serif;
   font-size: 80px;
   margin-top: 160px;
 }
 
 .libre {
-  font-family: "Libre Bodoni", serif;
+  font-family: 'Libre Bodoni', serif;
 }
 
 main {
@@ -62,7 +62,7 @@ span {
   margin-bottom: 1.5em;
   font-weight: 400;
   /* font-family: "Karla", Arial, sans-serif; */
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 p {
   font-size: 1.6rem;
@@ -72,7 +72,7 @@ p {
 }
 
 .bold {
-  font-family: "Libre Bodoni", serif;
+  font-family: 'Libre Bodoni', serif;
   position: absolute;
   top: 0;
   left: 0;
@@ -243,7 +243,7 @@ em {
 }
 
 .sec3 .about h4 {
-  font-family: "Libre Bodoni", serif;
+  font-family: 'Libre Bodoni', serif;
   color: #48609e;
   font-size: max(2.2rem, min(5vw, 2.4rem));
   margin-bottom: 10px;
@@ -258,7 +258,7 @@ em {
   margin: -30px 0 30px;
 }
 .sec3 .about_desc > h2::before {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   width: 30px;
@@ -267,7 +267,7 @@ em {
   left: -6%;
 }
 .sec3 .about_desc > h2::after {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   width: 30px;
@@ -298,7 +298,7 @@ em {
   width: 85px;
   font-weight: 500;
   display: inline-block;
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
 }
 .info_name {
   font-size: 40px;
@@ -338,7 +338,7 @@ em {
 }
 .about_desc .rotate .heading {
   /* font-family: "Karla", Arial, sans-serif; */
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 1em;
@@ -356,7 +356,7 @@ em {
   position: absolute;
   top: 8px;
   right: -40px;
-  content: "";
+  content: '';
   background: #000;
   width: 40px;
   height: 1px;
@@ -373,7 +373,7 @@ em {
 }
 .rotate .heading {
   /* font-family: "Karla", Arial, sans-serif; */
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 1em;
@@ -393,7 +393,7 @@ em {
   position: absolute;
   top: 8px;
   right: -40px;
-  content: "";
+  content: '';
   background: #000;
   width: 40px;
   height: 1px;
@@ -433,7 +433,7 @@ em {
 .chart figcaption {
   text-align: center;
   /* font-family: "Karla", Arial, sans-serif; */
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   margin-top: 8px;
   font-size: 16px;
 }
@@ -459,13 +459,18 @@ em {
 .chart .react {
   top: 18%;
 }
-.chart .jquery,
 .chart .ps,
 .chart .ai {
   top: 22%;
 }
-.chart .php {
-  top: 25%;
+.chart .typescript {
+  top: 18%;
+}
+.chart .graphql {
+  top: 18%;
+}
+.chart .next {
+  top: 18%;
 }
 .outer {
   fill: transparent;
@@ -493,16 +498,19 @@ em {
   stroke: #f8dc79;
 }
 
-.jquery + svg .outer {
+.typescript + svg .outer {
   stroke: #649cc5;
+}
+.next + svg .outer {
+  stroke: #575757;
 }
 
 .react + svg .outer {
   stroke: #afe7f6;
 }
 
-.php + svg .outer {
-  stroke: #8997af;
+.graphql + svg .outer {
+  stroke: #fb95d9;
 }
 .ps + svg .outer {
   stroke: #b1d0ea;
@@ -570,7 +578,7 @@ em {
   left: 0;
   right: 0;
   bottom: 0;
-  content: "";
+  content: '';
   background: rgba(0, 0, 0, 0.4);
   z-index: -1;
   opacity: 0;
@@ -627,7 +635,7 @@ em {
   top: 7px;
   left: -60px;
   right: 0;
-  content: "";
+  content: '';
   width: 40px;
   height: 1px;
   background: #000;
