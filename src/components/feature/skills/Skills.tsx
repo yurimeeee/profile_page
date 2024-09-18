@@ -50,7 +50,7 @@ const Skills = () => {
         $bgColor={theme.colors.ultraLightGrayBgColor}
         $boxShadow={'2px 4px 12px #00000014'}
       >
-        <Title>Frontend</Title>
+        <Title>State management</Title>
         <FlexBox $gap="50px" $flexWrap="wrap" $justifyContent={'center'}>
           {stateList.map((skill, idx) => (
             <SkillImg key={idx} src={`/images/skill/state/${skill}.svg`} alt={skill} />
@@ -68,7 +68,7 @@ const Skills = () => {
         $bgColor={theme.colors.ultraLightGrayBgColor}
         $boxShadow={'2px 4px 12px #00000014'}
       >
-        <Title>Frontend</Title>
+        <Title>Design / Communication</Title>
         <FlexBox $gap="50px" $flexWrap="wrap" $justifyContent={'center'}>
           {etcList.map((skill, idx) => (
             <SkillImg key={idx} src={`/images/skill/etc/${skill}.svg`} alt={skill} />
