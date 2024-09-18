@@ -7,30 +7,30 @@ import Header from '@components/layout/Header';
 import Footer from '@components/layout/Footer';
 import ScrollToTopButton from '@components/share/ScrollToTopButton';
 
-export const libreBodoni = Libre_Bodoni({
-  subsets: ['latin'],
-  variable: '--font-libre',
-  display: 'swap',
-});
+// export const libreBodoni = Libre_Bodoni({
+//   subsets: ['latin'],
+//   variable: '--font-libre',
+//   display: 'swap',
+// });
 
-export const montserrat = Montserrat({
-  subsets: ['latin'],
-  variable: '--font-montserrat',
-  display: 'swap',
-});
+// export const montserrat = Montserrat({
+//   subsets: ['latin'],
+//   variable: '--font-montserrat',
+//   display: 'swap',
+// });
 
-export const chosunNm = localFont({
-  src: '../fonts/ChosunNm.woff',
-  variable: '--font-ChosunNm',
-  // weight: '100 900',
-  weight: '100 400 500 900',
-});
-export const chosunSm = localFont({
-  src: '../fonts/ChosunSm.woff',
-  variable: '--font-chosunSm',
-  // weight: '100 900',
-  weight: '100 400 500 900',
-});
+// export const chosunNm = localFont({
+//   src: '../fonts/ChosunNm.woff',
+//   variable: '--font-ChosunNm',
+//   // weight: '100 900',
+//   weight: '100 400 500 900',
+// });
+// export const chosunSm = localFont({
+//   src: '../fonts/ChosunSm.woff',
+//   variable: '--font-chosunSm',
+//   // weight: '100 900',
+//   weight: '100 400 500 900',
+// });
 
 export const metadata: Metadata = {
   title: '김유림 | 프론트엔드 개발자 포트폴리오',
