@@ -56,6 +56,15 @@ const Projects = () => {
 
   const myProjectList = [
     {
+      img: '/images/site/todo/todo_main.png',
+      title: '투두 올, todo all',
+      sub_title: '현대인의 스케줄 관리에 적합한 투두리스트.',
+      desc: 'Supabase를 사용하여 일정 CRUD를 구현한 일정관리 web app. 전역 상태 관리는 zustand를 사용하였습니다. (현재 개발 진행중입니다.)',
+      date: '24. 08. 14 ~ 24. 09. 08',
+      site_url: 'https://todoall.vercel.app/',
+      git: 'https://github.com/yurimeeee/todolist',
+    },
+    {
       img: '/images/site/meubles/meubles_main.png',
       title: 'Meubles mall',
       sub_title: '라이프 스타일 편집샵, "뮤블"',
