@@ -1,0 +1,12 @@
+body {
+  position: static;
+  top: 0px !important;
+}
+
+iframe.skiptranslate {
+  display: none !important;
+}
+
+.skiptranslate {
+  display: none !important;
+}
