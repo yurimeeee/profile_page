@@ -29,7 +29,9 @@ const Archiving = () => {
         >
           <Img src={`/images/archiving/git.svg`} alt={'github'} />
           <FlexBox $gap="40px" $flexDirection={'column'}>
-            <Link>https://github.com/yurimeeee</Link>
+            <Link href="https://github.com/yurimeeee" target="_blank">
+              https://github.com/yurimeeee
+            </Link>
             <Desc>
               소스 코드 저장소로
               <br /> 경험한 팀프로젝트, 개인 프로젝트의 코드 <br /> 학습 및 코딩 연습과 관련된 코드를 관리합니다.
@@ -47,7 +49,9 @@ const Archiving = () => {
         >
           <Img src={`/images/archiving/tstory.svg`} alt={'github'} />
           <FlexBox $gap="40px" $flexDirection={'column'}>
-            <Link>https://gr0wingdeveloper.tistory.com/</Link>
+            <Link href="https://gr0wingdeveloper.tistory.com" target="_blank">
+              https://gr0wingdeveloper.tistory.com
+            </Link>
             <Desc>
               스스로 학습한 내용을 정리 및 지식 공유를 <br /> 목적으로 한 개인 블로그입니다. <br /> 주로 새로운 기술을 접목 시 작성합니다.
             </Desc>
@@ -74,7 +78,7 @@ const Wrap = styled.div`
   padding-bottom: 200px;
 `;
 
-const Link = styled.div`
+const Link = styled.a`
   font-family: 'MontserratBold';
   font-weight: 700;
   ${theme.typography.h3};
