@@ -1,6 +1,7 @@
-import theme from '@styles/theme';
 import React, { useEffect, useState } from 'react';
+
 import styled from 'styled-components';
+import theme from '@styles/theme';
 
 interface BackgroundTextProps {
   top?: string;

@@ -1,9 +1,10 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+
 import styled from 'styled-components';
-import { useRouter } from 'next/navigation';
 import theme from '@styles/theme';
+import { useRouter } from 'next/navigation';
 
 const Header = () => {
   const router = useRouter();
@@ -19,7 +20,7 @@ const Header = () => {
   // 스크롤 이벤트를 감지하여 섹션 활성화
   useEffect(() => {
     const handleScrollEvent = () => {
-      const sections = ['#about', '#skills', '#archiving', '#projects', '#contact'];
+      const sections = ['#about', '#skills', '#career', '#archiving', '#projects', '#contact'];
       let active = null;
       for (const section of sections) {
         const element = document.querySelector(section);
@@ -60,6 +61,9 @@ const Header = () => {
         </GnbItem>
         <GnbItem onClick={() => handleScroll('#skills')} className={activeSection === '#skills' ? 'active' : ''}>
           Skills
+        </GnbItem>
+        <GnbItem onClick={() => handleScroll('#career')} className={activeSection === '#career' ? 'active' : ''}>
+          Career
         </GnbItem>
         <GnbItem onClick={() => handleScroll('#archiving')} className={activeSection === '#archiving' ? 'active' : ''}>
           Archiving
