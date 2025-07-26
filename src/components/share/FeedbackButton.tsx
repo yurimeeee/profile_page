@@ -44,6 +44,11 @@ const Wrapper = styled.div`
   position: fixed;
   bottom: 112px;
   right: 40px;
+
+  ${theme.devices.mobile} {
+    bottom: 80px;
+    right: 20px;
+  }
 `;
 
 const Button = styled.button<{ isVisible: boolean }>`
@@ -74,6 +79,12 @@ const Button = styled.button<{ isVisible: boolean }>`
   &:hover span {
     opacity: 0.7;
     visibility: visible;
+  }
+  ${theme.devices.mobile} {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
   }
 `;
 

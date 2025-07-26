@@ -66,4 +66,12 @@ const Button = styled.button<{ isVisible: boolean }>`
     color: #878289;
     box-shadow: 0px 0px 0px 1.5px rgba(72, 96, 158, 0.7);
   }
+  ${theme.devices.mobile} {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
+    bottom: 20px;
+    right: 20px;
+  }
 `;
