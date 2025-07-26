@@ -3,6 +3,7 @@
 import React from 'react';
 import RotatingText from '@components/share/RotatingText';
 import styled from 'styled-components';
+import theme from '@styles/theme';
 
 const Main = () => {
   return (
@@ -23,6 +24,12 @@ const Wrap = styled.div`
   justify-content: center;
   align-items: center;
   gap: 20px;
+  padding-top: -68px;
+
+  ${theme.devices.mobile} {
+    height: calc(100vh - 100px);
+    padding-top: -100px;
+  }
 `;
 const Text = styled.div`
   font-family: 'ChosunNm';

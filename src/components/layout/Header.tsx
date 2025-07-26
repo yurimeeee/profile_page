@@ -73,7 +73,7 @@ const Header = () => {
           Me
         </GnbItem>
         <GnbItem onClick={() => handleScroll('#skills')} className={activeSection === '#skills' ? 'active' : ''}>
-          Skills
+          Tech
         </GnbItem>
         <GnbItem onClick={() => handleScroll('#career')} className={activeSection === '#career' ? 'active' : ''}>
           Work
@@ -109,6 +109,7 @@ const Wrap = styled.div`
   background-color: #ffffffc2;
 
   ${theme.devices.mobile} {
+    flex-direction: column;
     padding: 16px 20px;
   }
 `;
@@ -116,6 +117,10 @@ const Logo = styled.h1`
   cursor: pointer;
   ${theme.typography.h1}
   font-weight: 900;
+
+  ${theme.devices.mobile} {
+    ${theme.typography.h2}
+  }
 `;
 
 const GnB = styled.ul`
