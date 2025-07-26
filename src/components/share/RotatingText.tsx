@@ -1,5 +1,7 @@
-import React from 'react';
 import styled, { keyframes } from 'styled-components';
+
+import React from 'react';
+import theme from '@styles/theme';
 
 interface RotatingTextProps {
   text: string;
@@ -44,4 +46,12 @@ const Char = styled.span<{ delay: number }>`
   font-family: 'ChosunNm';
   font-weight: 900;
   font-size: 64px;
+
+  ${theme.devices.tablet} {
+    font-size: 56px;
+  }
+
+  ${theme.devices.mobile} {
+    font-size: 32px;
+  }
 `;

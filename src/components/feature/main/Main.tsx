@@ -26,7 +26,6 @@ const Wrap = styled.div`
 `;
 const Text = styled.div`
   font-family: 'ChosunNm';
-  /* font-family: 'MontserratBold'; */
   font-weight: 900;
   font-size: 64px;
 `;

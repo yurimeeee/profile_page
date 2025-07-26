@@ -17,9 +17,8 @@ const Archiving = () => {
 
   return (
     <Wrap id="archiving">
-      {/* <BackgroundText text="Archiving" top="0" desc={'경험과 지식을 저장하고 공유합니다.'} /> */}
       <BackgroundText text="Archiving" top="0" desc={'GitHub & Tech Blog'} />
-      <FlexBox $gap="36px">
+      <CustomFlex $gap="36px">
         <FlexBox
           data-aos="flip-down"
           data-aos-duration="600"
@@ -36,8 +35,6 @@ const Archiving = () => {
               https://github.com/yurimeeee
             </Link>
             <Desc>
-              {/* 소스 코드 저장소로
-              <br /> 경험한 팀프로젝트, 개인 프로젝트의 코드 <br /> 학습 및 코딩 연습과 관련된 코드를 관리합니다. */}
               프로젝트 아카이브 <br /> 직접 경험한 팀 프로젝트와 개인 프로젝트의 코드를 정리한 저장소입니다. <br /> 기술적 시도와 문제 해결 과정을 코드에 담았습니다.
             </Desc>
           </FlexBox>
@@ -58,12 +55,11 @@ const Archiving = () => {
               https://gr0wingdeveloper.tistory.com
             </Link>
             <Desc>
-              {/* 스스로 학습한 내용을 정리 및 지식 공유를 <br /> 목적으로 한 개인 블로그입니다. <br /> 주로 새로운 기술을 접목 시 작성합니다. */}
               학습의 기록과 공유 <br /> 스스로 학습한 내용을 정리하고, 공유하기 위한 개인 블로그입니다. <br /> 새로운 기술을 접목하거나, 문제를 해결한 내용을 중심으로 작성합니다.
             </Desc>
           </FlexBox>
         </FlexBox>
-      </FlexBox>
+      </CustomFlex>
     </Wrap>
   );
 };
@@ -98,3 +94,12 @@ const Desc = styled.div`
 `;
 
 const Img = styled.img``;
+
+const CustomFlex = styled(FlexBox)`
+  ${theme.devices.tablet} {
+    flex-direction: column;
+  }
+  ${theme.devices.mobile} {
+    flex-direction: column;
+  }
+`;

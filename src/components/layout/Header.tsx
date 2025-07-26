@@ -47,15 +47,8 @@ const Header = () => {
 
   return (
     <Wrap>
-      {/* <Logo onClick={() => router.push('/')}>KYR’s Portfolio</Logo> */}
       <Logo onClick={() => router.push('/')}>u.rim</Logo>
       <GnB>
-        {/* <GnbItem onClick={() => handleScroll('#about')}>About me</GnbItem>
-        <GnbItem onClick={() => handleScroll('#skills')}>Skills</GnbItem>
-        <GnbItem onClick={() => handleScroll('#archiving')}>Archiving</GnbItem>
-        <GnbItem onClick={() => handleScroll('#projects')}>Projects</GnbItem>
-        <GnbItem onClick={() => handleScroll('#contact')}>Contact</GnbItem> */}
-
         <GnbItem onClick={() => handleScroll('#about')} className={activeSection === '#about' ? 'active' : ''}>
           About me
         </GnbItem>
@@ -105,6 +98,10 @@ const GnB = styled.ul`
   display: flex;
   gap: 24px;
   height: 24px;
+
+  ${theme.devices.mobile} {
+    display: none;
+  }
 `;
 
 const GnbItem = styled.li`

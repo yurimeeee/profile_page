@@ -16,7 +16,6 @@ interface BackgroundTextProps {
 const BackgroundText = ({ top, left, right, bottom, text, desc, center }: BackgroundTextProps) => {
   const [scrollPosition, setScrollPosition] = useState(0);
 
-  // 스크롤 핸들러
   const handleScroll = () => {
     setScrollPosition(window.scrollY);
   };
@@ -61,13 +60,17 @@ const Letter = styled.span<LetterProps>`
   transition: opacity 0.4s ease, color 0.5s ease;
   z-index: 0;
 
-  /* 스크롤에 따라 글자 색이 점차 진해짐 */
   ${(props) =>
     props.scrollPosition > props.index * 30 &&
     `
     opacity: 1;
     color: #f0eff1;
   `}
+
+  ${theme.devices.mobile} {
+    font-size: 100%;
+    white-space: nowrap;
+  }
 `;
 
 const Wrap = styled.div<BackgroundTextProps>`
@@ -90,7 +93,9 @@ const Wrap = styled.div<BackgroundTextProps>`
     font-size: 120px;
   }
   ${theme.devices.mobile} {
-    font-size: 120px;
+    font-size: 100px;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
   }
 `;
 

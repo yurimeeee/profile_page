@@ -60,7 +60,7 @@ const ProjectSlider = ({ list }: ProjectSliderProps) => {
 
                 <Date>{slide.date}</Date>
               </Desc>
-              <FlexBox $gap="16px">
+              <FlexBox $gap="16px" $margin={'16px 0 0 0'}>
                 {slide.site_url && (
                   <button
                     className="effrct_button"
@@ -143,7 +143,14 @@ const SlideWrap = styled.div`
   align-items: center;
   width: 80%;
   margin: 0 auto;
-  height: 400px;
+  min-height: 400px;
+
+  ${theme.devices.tablet} {
+    flex-direction: column;
+  }
+  ${theme.devices.mobile} {
+    flex-direction: column;
+  }
 `;
 
 const ImageContainer = styled.div`
