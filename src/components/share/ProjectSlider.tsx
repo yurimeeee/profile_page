@@ -233,6 +233,10 @@ const Title = styled.div`
   font-family: 'MontserratBold';
   font-weight: 800;
   margin-bottom: 20px;
+
+  ${theme.devices.mobile} {
+    ${theme.typography.h2}
+  }
 `;
 
 const SubTitle = styled.div`
@@ -240,6 +244,10 @@ const SubTitle = styled.div`
   font-family: 'ChosunNm';
   font-weight: 700;
   margin-bottom: 12px;
+
+  ${theme.devices.mobile} {
+    ${theme.typography.h3}
+  }
 `;
 
 const Desc = styled.div`
@@ -247,6 +255,10 @@ const Desc = styled.div`
   font-family: 'ChosunNm';
   font-weight: 500;
   flex: 1;
+
+  ${theme.devices.mobile} {
+    ${theme.typography.h5}
+  }
 `;
 const Date = styled.div`
   ${theme.typography.h5}

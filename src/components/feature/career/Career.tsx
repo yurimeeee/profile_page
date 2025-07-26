@@ -114,6 +114,7 @@ const Wrap = styled.div`
 
   ${theme.devices.mobile} {
     padding-top: 120px;
+    padding-bottom: 120px;
   }
 `;
 

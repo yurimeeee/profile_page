@@ -80,6 +80,10 @@ const Wrap = styled.div`
   padding-left: 36px;
   padding-right: 36px;
   padding-bottom: 200px;
+
+  ${theme.devices.mobile} {
+    padding-bottom: 100px;
+  }
 `;
 
 const Link = styled.a`
