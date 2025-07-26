@@ -63,7 +63,6 @@ export default About;
 
 const Wrap = styled.div`
   width: 100%;
-  /* height: calc(100vh - 68px); */
   position: relative;
   display: flex;
   flex-direction: column;
@@ -73,7 +72,7 @@ const Wrap = styled.div`
   padding: 140px 36px;
 
   ${theme.devices.mobile} {
-    padding: 120px 24px;
+    padding: 120px 0 40px;
   }
 `;
 
@@ -144,5 +143,6 @@ const Desc = styled.div`
   ${theme.devices.mobile} {
     margin-top: 20px;
     margin-bottom: 40px;
+    ${theme.typography.h5};
   }
 `;
