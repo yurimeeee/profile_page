@@ -59,6 +59,8 @@ const Button = styled.button<{ isVisible: boolean }>`
   transition: 0.3s ease-in-out;
   width: 56px;
   height: 56px;
+  min-width: 56px;
+  min-height: 56px;
   display: flex;
   justify-content: center;
   align-items: center;

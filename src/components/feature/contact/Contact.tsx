@@ -21,7 +21,7 @@ const Contact = () => {
     <Wrap id="contact">
       <BackgroundText text="Contact" top="0" />
       <Img src={`/images/contact.png`} alt={'contact'} />
-      <FlexBox $gap="40px" $justifyContent="center">
+      <CustomFlex $gap="40px" $justifyContent="center">
         <Profile src={`/images/profile.png`} alt={'contact'} />
         <FlexBox $flexDirection={'column'} $gap="28px" $maxWidth={280}>
           <FlexBox $flexDirection={'column'} $alignItems={'start'} $gap="10px">
@@ -47,26 +47,8 @@ const Contact = () => {
               <SiTistory size={20} />
             </LinkButton>
           </FlexBox>
-          {/* <FlexBox $flexDirection={'column'} $alignItems={'start'} $gap="10px">
-            <Label>LinkedIn</Label>
-            <Text>
-              <a href=" https://www.linkedin.com/in/%EC%9C%A0%EB%A6%BC-%EA%B9%80-02989a298/"> https://www.linkedin.com/in/%EC%9C%A0%EB%A6%BC-%EA%B9%80-02989a298/</a>
-            </Text>
-          </FlexBox>
-          <FlexBox $flexDirection={'column'} $alignItems={'start'} $gap="10px">
-            <Label>Github</Label>
-            <Text>
-              <a href="https://github.com/yurimeeee">https://github.com/yurimeeee</a>
-            </Text>
-          </FlexBox>
-          <FlexBox $flexDirection={'column'} $alignItems={'start'} $gap="10px">
-            <Label>Blog</Label>
-            <Text>
-              <a href="https://gr0wingdeveloper.tistory.com">https://gr0wingdeveloper.tistory.com</a>
-            </Text>
-          </FlexBox> */}
         </FlexBox>
-      </FlexBox>
+      </CustomFlex>
     </Wrap>
   );
 };
@@ -108,6 +90,14 @@ const Text = styled.div`
 const Img = styled.img`
   z-index: 10;
   padding-right: 200px;
+
+  ${theme.devices.tablet} {
+    padding-right: 0;
+  }
+  ${theme.devices.mobile} {
+    padding-right: 0;
+    width: 100%;
+  }
 `;
 const Profile = styled.img`
   height: 350px;
@@ -127,5 +117,11 @@ const LinkButton = styled.div`
 
   &:hover {
     background-color: #eec4c4;
+  }
+`;
+
+const CustomFlex = styled(FlexBox)`
+  ${theme.devices.mobile} {
+    flex-direction: column;
   }
 `;
