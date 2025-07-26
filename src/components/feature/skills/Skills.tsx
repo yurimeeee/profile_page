@@ -23,7 +23,7 @@ const Skills = () => {
     <Wrap id="skills">
       <BackgroundText text="Skills" top="0" desc={'아래 기술들을 활용해 사용자 경험을 만듭니다'} />
       <FlexBox
-        // data-aos="fade-up"
+        data-aos-once={true}
         data-aos="flip-down"
         data-aos-duration="600"
         data-aos-easing="ease-in-out"
@@ -34,14 +34,14 @@ const Skills = () => {
         $boxShadow={'2px 4px 12px #00000014'}
       >
         <Title>Frontend</Title>
-        <FlexBox $gap="30px" $flexWrap="wrap" $justifyContent={'center'}>
+        <CustomFlex $gap="30px" $flexWrap="wrap" $justifyContent={'center'}>
           {frontList.map((skill, idx) => (
             <SkillImg key={idx} src={`/images/skill/front/${skill}.svg`} alt={skill} />
           ))}
-        </FlexBox>
+        </CustomFlex>
       </FlexBox>
       <FlexBox
-        // data-aos="fade-up"
+        data-aos-once={true}
         data-aos="flip-down"
         data-aos-duration="600"
         data-aos-easing="ease-in-out"
@@ -52,14 +52,14 @@ const Skills = () => {
         $boxShadow={'2px 4px 12px #00000014'}
       >
         <Title>State management</Title>
-        <FlexBox $gap="50px" $flexWrap="wrap" $justifyContent={'center'}>
+        <CustomFlex $gap="50px" $flexWrap="wrap" $justifyContent={'center'}>
           {stateList.map((skill, idx) => (
             <SkillImg key={idx} src={`/images/skill/state/${skill}.svg`} alt={skill} />
           ))}
-        </FlexBox>
+        </CustomFlex>
       </FlexBox>
       <FlexBox
-        // data-aos="fade-up"
+        data-aos-once={true}
         data-aos="flip-down"
         data-aos-duration="600"
         data-aos-easing="ease-in-out"
@@ -70,11 +70,11 @@ const Skills = () => {
         $boxShadow={'2px 4px 12px #00000014'}
       >
         <Title>Design / Communication</Title>
-        <FlexBox $gap="50px" $flexWrap="wrap" $justifyContent={'center'}>
+        <CustomFlex $gap="50px" $flexWrap="wrap" $justifyContent={'center'}>
           {etcList.map((skill, idx) => (
             <SkillImg key={idx} src={`/images/skill/etc/${skill}.svg`} alt={skill} />
           ))}
-        </FlexBox>
+        </CustomFlex>
       </FlexBox>
     </Wrap>
   );
@@ -94,6 +94,11 @@ const Wrap = styled.div`
   padding-left: 36px;
   padding-right: 36px;
   padding-bottom: 200px;
+
+  ${theme.devices.mobile} {
+    padding-top: 160px;
+    padding-bottom: 100px;
+  }
 `;
 
 const Title = styled.div`
@@ -102,6 +107,25 @@ const Title = styled.div`
   font-size: 36px;
   margin-bottom: 32px;
   color: ${theme.colors.blueColor};
+
+  ${theme.devices.mobile} {
+    font-size: 24px;
+  }
 `;
 
-const SkillImg = styled.img``;
+const SkillImg = styled.img`
+  ${theme.devices.tablet} {
+    scale: 0.8;
+  }
+  ${theme.devices.mobile} {
+    scale: 0.6;
+  }
+`;
+const CustomFlex = styled(FlexBox)`
+  ${theme.devices.tablet} {
+    gap: 20px;
+  }
+  ${theme.devices.mobile} {
+    gap: 20px;
+  }
+`;

@@ -68,6 +68,26 @@ const Header = () => {
           Contact
         </GnbItem>
       </GnB>
+      <MobileGnB>
+        <GnbItem onClick={() => handleScroll('#about')} className={activeSection === '#about' ? 'active' : ''}>
+          Me
+        </GnbItem>
+        <GnbItem onClick={() => handleScroll('#skills')} className={activeSection === '#skills' ? 'active' : ''}>
+          Skills
+        </GnbItem>
+        <GnbItem onClick={() => handleScroll('#career')} className={activeSection === '#career' ? 'active' : ''}>
+          Work
+        </GnbItem>
+        <GnbItem onClick={() => handleScroll('#archiving')} className={activeSection === '#archiving' ? 'active' : ''}>
+          Git
+        </GnbItem>
+        <GnbItem onClick={() => handleScroll('#projects')} className={activeSection === '#projects' ? 'active' : ''}>
+          Projects
+        </GnbItem>
+        <GnbItem onClick={() => handleScroll('#contact')} className={activeSection === '#contact' ? 'active' : ''}>
+          Contact
+        </GnbItem>
+      </MobileGnB>
     </Wrap>
   );
 };
@@ -87,6 +107,10 @@ const Wrap = styled.div`
   padding: 16px 36px;
   /* background-color: ${theme.colors.whiteColor}; */
   background-color: #ffffffc2;
+
+  ${theme.devices.mobile} {
+    padding: 16px 20px;
+  }
 `;
 const Logo = styled.h1`
   cursor: pointer;
@@ -101,6 +125,17 @@ const GnB = styled.ul`
 
   ${theme.devices.mobile} {
     display: none;
+  }
+`;
+
+const MobileGnB = styled.ul`
+  display: none;
+
+  ${theme.devices.mobile} {
+    display: flex;
+    gap: 16px;
+    height: 36px;
+    align-items: center;
   }
 `;
 
@@ -136,5 +171,10 @@ const GnbItem = styled.li`
 
   &.active::after {
     width: 100%;
+  }
+
+  ${theme.devices.mobile} {
+    font-size: 16px;
+    line-height: 16px;
   }
 `;

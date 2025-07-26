@@ -20,6 +20,7 @@ const Archiving = () => {
       <BackgroundText text="Archiving" top="0" desc={'GitHub & Tech Blog'} />
       <CustomFlex $gap="36px">
         <FlexBox
+          data-aos-once={true}
           data-aos="flip-down"
           data-aos-duration="600"
           data-aos-easing="ease-in-out"
@@ -40,6 +41,7 @@ const Archiving = () => {
           </FlexBox>
         </FlexBox>
         <FlexBox
+          data-aos-once={true}
           data-aos="flip-down"
           data-aos-duration="600"
           data-aos-easing="ease-in-out"
@@ -91,6 +93,10 @@ const Desc = styled.div`
   font-family: 'ChosunNm';
   font-weight: 700;
   ${theme.typography.h3};
+
+  ${theme.devices.mobile} {
+    ${theme.typography.h5};
+  }
 `;
 
 const Img = styled.img``;

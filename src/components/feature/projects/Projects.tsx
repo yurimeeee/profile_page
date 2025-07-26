@@ -186,6 +186,7 @@ const Projects = () => {
         <ProjectSlider list={teamProjectList} />
       </FlexBox> */}
       <FlexBox
+        data-aos-once={true}
         data-aos="fade-up"
         data-aos-duration="600"
         data-aos-easing="ease-in-out"

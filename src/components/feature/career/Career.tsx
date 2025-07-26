@@ -18,6 +18,7 @@ const Career = () => {
     <Wrap id="career">
       <BackgroundText text="Career" top="0" />
       <FlexBox
+        data-aos-once={true}
         data-aos="fade-up"
         data-aos-duration="600"
         data-aos-easing="ease-in-out"
@@ -57,6 +58,7 @@ const Career = () => {
         </FlexBox>
       </FlexBox>
       <FlexBox
+        data-aos-once={true}
         data-aos="fade-up"
         data-aos-duration="600"
         data-aos-easing="ease-in-out"
@@ -105,10 +107,14 @@ const Wrap = styled.div`
   justify-content: center;
   align-items: center;
   gap: 20px;
-  padding-top: 300px;
+  padding-top: 200px;
   padding-left: 36px;
   padding-right: 36px;
   padding-bottom: 200px;
+
+  ${theme.devices.mobile} {
+    padding-top: 120px;
+  }
 `;
 
 const Title = styled.div`
@@ -117,6 +123,10 @@ const Title = styled.div`
   font-size: 36px;
   margin-bottom: 12px;
   color: ${theme.colors.blueColor};
+
+  ${theme.devices.mobile} {
+    font-size: 24px;
+  }
 `;
 
 const SubTitle = styled.div`
@@ -124,10 +134,18 @@ const SubTitle = styled.div`
   font-weight: 700;
   ${theme.typography.h2};
   margin-bottom: 14px;
+
+  ${theme.devices.mobile} {
+    ${theme.typography.h3};
+  }
 `;
 
 const Desc = styled.div`
   font-family: 'ChosunNm';
   font-weight: 700;
   ${theme.typography.h4};
+
+  ${theme.devices.mobile} {
+    ${theme.typography.h5};
+  }
 `;

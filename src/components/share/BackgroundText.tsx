@@ -79,17 +79,18 @@ const Wrap = styled.div<BackgroundTextProps>`
   font-size: 220px;
   font-family: 'Libre Bodoni', sans-serif;
   font-weight: 700;
+  width: 100%;
+  padding: 0 24px;
   ${(props) => props.top && `top: ${props.top};`}
   ${(props) => props.left && `left: ${props.left};`}
-  ${(props) => props.right && `right: ${props.right};`}
-  ${(props) => props.bottom && `bottom: ${props.bottom};`}
-  ${(props) =>
+    ${(props) => props.right && `right: ${props.right};`}
+    ${(props) => props.bottom && `bottom: ${props.bottom};`}
+    ${(props) =>
     props.center &&
     `
   left:'50%';
   transform: translateX(-50%);`}
-
-  ${theme.devices.tablet} {
+    ${theme.devices.tablet} {
     font-size: 120px;
   }
   ${theme.devices.mobile} {
@@ -104,4 +105,9 @@ const Text = styled.div`
   justify-content: center;
   font-family: 'ChosunNm';
   font-size: 36px;
+  width: 100%;
+
+  ${theme.devices.mobile} {
+    font-size: 24px;
+  }
 `;
