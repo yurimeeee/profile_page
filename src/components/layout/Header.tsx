@@ -9,6 +9,7 @@ import { useRouter } from 'next/navigation';
 const Header = () => {
   const router = useRouter();
   const [activeSection, setActiveSection] = useState<string | null>(null);
+  const [isLogoVisible, setIsLogoVisible] = useState(true);
 
   const handleScroll = (target: string) => {
     const element = document.querySelector(target);
@@ -19,35 +20,42 @@ const Header = () => {
 
   // 스크롤 이벤트를 감지하여 섹션 활성화
   useEffect(() => {
+    let timeout: NodeJS.Timeout;
+
     const handleScrollEvent = () => {
-      const sections = ['#about', '#skills', '#career', '#archiving', '#projects', '#contact'];
-      let active = null;
-      for (const section of sections) {
-        const element = document.querySelector(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          // 뷰포트 상단에 가까운 섹션을 활성화
-          if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-            active = section;
-            break;
+      clearTimeout(timeout);
+
+      timeout = setTimeout(() => {
+        const scrollY = window.scrollY;
+
+        setIsLogoVisible(scrollY < 20);
+
+        const sections = ['#about', '#skills', '#career', '#archiving', '#projects', '#contact'];
+        let active = null;
+        for (const section of sections) {
+          const element = document.querySelector(section);
+          if (element) {
+            const rect = element.getBoundingClientRect();
+            if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+              active = section;
+              break;
+            }
           }
         }
-      }
-      setActiveSection(active);
+        setActiveSection(active);
+      }, 50);
     };
 
-    // 스크롤 이벤트 리스너 등록
     window.addEventListener('scroll', handleScrollEvent);
-
-    // 컴포넌트 언마운트 시 이벤트 리스너 제거
-    return () => {
-      window.removeEventListener('scroll', handleScrollEvent);
-    };
+    return () => window.removeEventListener('scroll', handleScrollEvent);
   }, []);
 
   return (
     <Wrap>
-      <Logo onClick={() => router.push('/')}>u.rim</Logo>
+      <Logo className={!isLogoVisible ? 'hide-on-mobile' : ''} onClick={() => router.push('/')}>
+        u.rim
+      </Logo>
+      {/* <Logo onClick={() => router.push('/')}>u.rim</Logo> */}
       <GnB>
         <GnbItem onClick={() => handleScroll('#about')} className={activeSection === '#about' ? 'active' : ''}>
           About me
@@ -117,9 +125,17 @@ const Logo = styled.h1`
   cursor: pointer;
   ${theme.typography.h1}
   font-weight: 900;
+  transition: opacity 0.3s ease-out;
 
   ${theme.devices.mobile} {
     ${theme.typography.h2}
+
+    &.hide-on-mobile {
+      opacity: 0;
+      visibility: hidden;
+      height: 0;
+      pointer-events: none;
+    }
   }
 `;
 
