@@ -2,6 +2,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import { FlexBox } from '@components/styled/StyledComponents';
+import Image from 'next/image';
 import React from 'react';
 import Slider from 'react-slick';
 import styled from 'styled-components';
@@ -13,7 +14,7 @@ interface SlideItems {
   sub_title: string;
   desc: string;
   date: string;
-  site_url: string;
+  site_url?: string;
   git: string;
 }
 interface ProjectSliderProps {
@@ -38,7 +39,18 @@ const ProjectSlider = ({ list }: ProjectSliderProps) => {
         {list.map((slide: SlideItems, index: number) => (
           <SlideWrap key={index}>
             <ImageContainer>
-              <img src={slide.img} alt={slide.title} style={{ maxWidth: '55%', height: 'auto' }} />
+              <Image
+                src={slide.img}
+                alt={slide.title}
+                width={600}
+                height={400}
+                style={{
+                  maxWidth: '100%',
+                  height: 'auto',
+                  objectFit: 'contain',
+                }}
+                unoptimized
+              />
             </ImageContainer>
             <TextContainer>
               <Title>{slide.title}</Title>
@@ -49,14 +61,16 @@ const ProjectSlider = ({ list }: ProjectSliderProps) => {
                 <Date>{slide.date}</Date>
               </Desc>
               <FlexBox $gap="16px">
-                <button
-                  className="effrct_button"
-                  onClick={() => {
-                    window.open(slide.site_url, '_blank');
-                  }}
-                >
-                  More View
-                </button>
+                {slide.site_url && (
+                  <button
+                    className="effrct_button"
+                    onClick={() => {
+                      window.open(slide.site_url, '_blank');
+                    }}
+                  >
+                    More View
+                  </button>
+                )}
                 <button
                   className="effrct_button"
                   onClick={() => {
