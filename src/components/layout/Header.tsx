@@ -70,13 +70,13 @@ const Header = () => {
       </GnB>
       <MobileGnB>
         <GnbItem onClick={() => handleScroll('#about')} className={activeSection === '#about' ? 'active' : ''}>
-          Me
+          About
         </GnbItem>
         <GnbItem onClick={() => handleScroll('#skills')} className={activeSection === '#skills' ? 'active' : ''}>
-          Tech
+          Skills
         </GnbItem>
         <GnbItem onClick={() => handleScroll('#career')} className={activeSection === '#career' ? 'active' : ''}>
-          Work
+          Career
         </GnbItem>
         <GnbItem onClick={() => handleScroll('#archiving')} className={activeSection === '#archiving' ? 'active' : ''}>
           Git
@@ -155,12 +155,12 @@ const GnbItem = styled.li`
 
   &:hover {
     color: ${theme.colors.blueColor};
-    font-weight: 700;
+    /* font-weight: 700; */
   }
 
   &.active {
     color: ${theme.colors.blueColor};
-    font-weight: 700;
+    /* font-weight: 700; */
   }
 
   &::after {
