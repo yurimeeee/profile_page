@@ -1,11 +1,14 @@
-import type { Metadata } from 'next';
-import localFont from 'next/font/local';
 import './globals.css';
+
 import { Libre_Bodoni, Montserrat } from 'next/font/google';
-import StyledComponentsRegistry from '@lib/StyledComponentsRegistry';
-import Header from '@components/layout/Header';
+
+import FeedbackButton from '@components/share/FeedbackButton';
 import Footer from '@components/layout/Footer';
+import Header from '@components/layout/Header';
+import type { Metadata } from 'next';
 import ScrollToTopButton from '@components/share/ScrollToTopButton';
+import StyledComponentsRegistry from '@lib/StyledComponentsRegistry';
+import localFont from 'next/font/local';
 
 // export const libreBodoni = Libre_Bodoni({
 //   subsets: ['latin'],
@@ -50,6 +53,7 @@ export default function RootLayout({
         <StyledComponentsRegistry>
           <Header />
           {children}
+          <FeedbackButton />
           <ScrollToTopButton />
           <Footer />
         </StyledComponentsRegistry>

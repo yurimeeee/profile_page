@@ -1,7 +1,7 @@
 'use client';
 
-import RotatingText from '@components/share/RotatingText';
 import React from 'react';
+import RotatingText from '@components/share/RotatingText';
 import styled from 'styled-components';
 
 const Main = () => {
@@ -9,8 +9,6 @@ const Main = () => {
     <Wrap>
       <RotatingText text="Frontend Developer" />
       <RotatingText text="Kim yurim Portfolio" />
-      {/* <Text>Frontend Developer</Text>
-      <Text>Kim yurim Portfolio</Text> */}
     </Wrap>
   );
 };

@@ -1,7 +1,9 @@
 "use client";
 
 import styled, { css } from "styled-components";
+
 import theme from "@styles/theme";
+
 // import { flex } from "@styles/variables";
 // import { darken } from "polished";
 
@@ -25,6 +27,7 @@ type FlexBoxType = {
   $flexWrap?: string;
   $bgColor?: string;
   $boxShadow?: string;
+  $minHeight?: number;
 };
 
 type WrapperType = {
@@ -118,6 +121,7 @@ export const FlexBox = styled.div<FlexBoxType>`
     $boxShadow ? $boxShadow : 'none'};
   background-color: ${({ $bgColor }) =>
     $bgColor ? $bgColor : 'none'};
+  min-height: ${({ $minHeight }) => ($minHeight ? `${$minHeight}px` : 'auto')};
 `;
 
 export const Wrapper = styled.div<WrapperType>`

@@ -1,10 +1,11 @@
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
+import { FlexBox } from '@components/styled/StyledComponents';
 import React from 'react';
 import Slider from 'react-slick';
 import styled from 'styled-components';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import theme from '@styles/theme';
-import { FlexBox } from '@components/styled/StyledComponents';
 
 interface SlideItems {
   img: string;
@@ -37,7 +38,7 @@ const ProjectSlider = ({ list }: ProjectSliderProps) => {
         {list.map((slide: SlideItems, index: number) => (
           <SlideWrap key={index}>
             <ImageContainer>
-              <img src={slide.img} alt={slide.title} />
+              <img src={slide.img} alt={slide.title} style={{ maxWidth: '55%', height: 'auto' }} />
             </ImageContainer>
             <TextContainer>
               <Title>{slide.title}</Title>

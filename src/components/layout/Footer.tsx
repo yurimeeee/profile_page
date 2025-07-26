@@ -7,7 +7,7 @@ import theme from '@styles/theme';
 const Footer = () => {
   return (
     <Wrap>
-      <CopyWrite>© 2024 Kim Yurim All rights reserved</CopyWrite>
+      <CopyWrite>© 2025 Kim Yurim All rights reserved</CopyWrite>
     </Wrap>
   );
 };

@@ -1,13 +1,16 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import styled from 'styled-components';
-import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-import theme from '@styles/theme';
-import { FlexBox } from '@components/styled/StyledComponents';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { useEffect, useState } from 'react';
+
+import AOS from 'aos';
 import BackgroundText from '@components/share/BackgroundText';
+import { FlexBox } from '@components/styled/StyledComponents';
+import { SiTistory } from 'react-icons/si';
+import styled from 'styled-components';
+import theme from '@styles/theme';
 
 const Contact = () => {
   useEffect(() => {
@@ -33,6 +36,23 @@ const Contact = () => {
               <a href="tel:+821095254089">+82 10-9525-4089</a>
             </Text>
           </FlexBox>
+          <FlexBox $flexDirection={'row'} $alignItems={'start'} $gap="10px">
+            <LinkButton onClick={() => window.open('https://www.linkedin.com/in/%EC%9C%A0%EB%A6%BC-%EA%B9%80-02989a298/', '_blank')}>
+              <FaLinkedin size={24} />
+            </LinkButton>
+            <LinkButton onClick={() => window.open('https://github.com/yurimeeee', '_blank')}>
+              <FaGithub size={24} />
+            </LinkButton>
+            <LinkButton onClick={() => window.open('https://gr0wingdeveloper.tistory.com', '_blank')}>
+              <SiTistory size={20} />
+            </LinkButton>
+          </FlexBox>
+          {/* <FlexBox $flexDirection={'column'} $alignItems={'start'} $gap="10px">
+            <Label>LinkedIn</Label>
+            <Text>
+              <a href=" https://www.linkedin.com/in/%EC%9C%A0%EB%A6%BC-%EA%B9%80-02989a298/"> https://www.linkedin.com/in/%EC%9C%A0%EB%A6%BC-%EA%B9%80-02989a298/</a>
+            </Text>
+          </FlexBox>
           <FlexBox $flexDirection={'column'} $alignItems={'start'} $gap="10px">
             <Label>Github</Label>
             <Text>
@@ -44,7 +64,7 @@ const Contact = () => {
             <Text>
               <a href="https://gr0wingdeveloper.tistory.com">https://gr0wingdeveloper.tistory.com</a>
             </Text>
-          </FlexBox>
+          </FlexBox> */}
         </FlexBox>
       </FlexBox>
     </Wrap>
@@ -91,4 +111,21 @@ const Img = styled.img`
 `;
 const Profile = styled.img`
   height: 350px;
+`;
+
+const LinkButton = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: #e8b7b7;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    background-color: #eec4c4;
+  }
 `;

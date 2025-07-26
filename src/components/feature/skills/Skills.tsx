@@ -1,13 +1,14 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import styled from 'styled-components';
-import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-import theme from '@styles/theme';
-import { FlexBox } from '@components/styled/StyledComponents';
+import { useEffect, useState } from 'react';
+
+import AOS from 'aos';
 import BackgroundText from '@components/share/BackgroundText';
+import { FlexBox } from '@components/styled/StyledComponents';
+import styled from 'styled-components';
+import theme from '@styles/theme';
 
 const Skills = () => {
   const frontList = ['react', 'next', 'typescript', 'javascript', 'html', 'css', 'graphql', 'jquery', 'php', 'sass', 'less', 'tailwind'];
@@ -20,7 +21,7 @@ const Skills = () => {
 
   return (
     <Wrap id="skills">
-      <BackgroundText text="Skills" top="0" desc={'이러한 기술들로 개발합니다.'} />
+      <BackgroundText text="Skills" top="0" desc={'아래 기술들을 활용해 사용자 경험을 만듭니다'} />
       <FlexBox
         // data-aos="fade-up"
         data-aos="flip-down"
