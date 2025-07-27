@@ -37,7 +37,7 @@ const Contact = () => {
             </Text>
           </FlexBox>
           <FlexBox $flexDirection={'row'} $alignItems={'start'} $gap="10px">
-            <LinkButton onClick={() => window.open('https://www.linkedin.com/in/%EC%9C%A0%EB%A6%BC-%EA%B9%80-02989a298/', '_blank')}>
+            <LinkButton onClick={() => window.open('https://www.linkedin.com/in/yurimkim67/', '_blank')}>
               <FaLinkedin size={24} />
             </LinkButton>
             <LinkButton onClick={() => window.open('https://github.com/yurimeeee', '_blank')}>
