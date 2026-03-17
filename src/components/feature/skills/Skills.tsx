@@ -21,7 +21,11 @@ const Skills = () => {
 
   return (
     <Wrap id="skills">
-      <BackgroundText text="Skills" top="0" desc={'아래 기술들을 활용해 사용자 경험을 만듭니다'} />
+      <BackgroundText
+        text="Skills"
+        top="0"
+        // desc={'아래 기술들을 활용해 사용자 경험을 만듭니다'}
+      />
       <FlexBox
         data-aos-once={true}
         data-aos="flip-down"
