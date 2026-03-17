@@ -17,6 +17,7 @@ interface SlideItems {
   date: string;
   site_url?: string;
   git: string;
+  demo_url?: string;
 }
 interface ProjectSliderProps {
   list: SlideItems[];
@@ -45,74 +46,95 @@ const AutoImageSlide = ({ images }: { images: string[] }) => {
 };
 
 const ProjectSlider = ({ list }: ProjectSliderProps) => {
+  const [demoVideo, setDemoVideo] = useState<string | null>(null);
+
   const settings = {
     dots: true,
     infinite: true,
     speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: false, // 자동 재생 끄기
-    arrows: true, // 화살표 활성화
+    autoplay: false,
+    arrows: true,
     draggable: true,
   };
 
   return (
-    <Wrapper>
-      <StyledSlider {...settings}>
-        {list.map((slide: SlideItems, index: number) => (
-          <SlideWrap key={index}>
-            <ImageContainer>
-              {slide.images && slide.images.length > 0 ? (
-                <AutoImageSlide images={slide.images} />
-              ) : (
-                <Image
-                  src={slide.img}
-                  alt={slide.title}
-                  width={600}
-                  height={400}
-                  style={{
-                    maxWidth: '100%',
-                    maxHeight: '400px',
-                    height: 'auto',
-                    objectFit: 'contain',
-                  }}
-                  unoptimized
-                />
-              )}
-            </ImageContainer>
-            <TextContainer>
-              <Title>{slide.title}</Title>
-              <SubTitle>{slide.sub_title}</SubTitle>
-              <Desc>
-                {slide.desc}
-
-                <Date>{slide.date}</Date>
-              </Desc>
-              <FlexBox $gap="16px" $margin={'16px 0 0 0'}>
-                {slide.site_url && (
+    <>
+      <Wrapper>
+        <StyledSlider {...settings}>
+          {list.map((slide: SlideItems, index: number) => (
+            <SlideWrap key={index}>
+              <ImageContainer>
+                {slide.images && slide.images.length > 0 ? (
+                  <AutoImageSlide images={slide.images} />
+                ) : (
+                  <Image
+                    src={slide.img}
+                    alt={slide.title}
+                    width={600}
+                    height={400}
+                    style={{
+                      maxWidth: '100%',
+                      maxHeight: '400px',
+                      height: 'auto',
+                      objectFit: 'contain',
+                    }}
+                    unoptimized
+                  />
+                )}
+              </ImageContainer>
+              <TextContainer>
+                <Title>{slide.title}</Title>
+                <SubTitle>{slide.sub_title}</SubTitle>
+                <Desc>
+                  {slide.desc}
+                  <Date>{slide.date}</Date>
+                </Desc>
+                <FlexBox $gap="16px" $margin={'16px 0 0 0'}>
+                  {slide.demo_url && (
+                    <button
+                      className="effrct_button"
+                      onClick={() => setDemoVideo(slide.demo_url!)}
+                    >
+                      Demo
+                    </button>
+                  )}
+                  {slide.site_url && (
+                    <button
+                      className="effrct_button"
+                      onClick={() => window.open(slide.site_url, '_blank')}
+                    >
+                      More View
+                    </button>
+                  )}
                   <button
                     className="effrct_button"
-                    onClick={() => {
-                      window.open(slide.site_url, '_blank');
-                    }}
+                    onClick={() => window.open(slide.git, '_blank')}
                   >
-                    More View
+                    GitHub
                   </button>
-                )}
-                <button
-                  className="effrct_button"
-                  onClick={() => {
-                    window.open(slide.git, '_blank');
-                  }}
-                >
-                  GitHub
-                </button>
-              </FlexBox>
-            </TextContainer>
-          </SlideWrap>
-        ))}
-      </StyledSlider>
-    </Wrapper>
+                </FlexBox>
+              </TextContainer>
+            </SlideWrap>
+          ))}
+        </StyledSlider>
+      </Wrapper>
+
+      {demoVideo && (
+        <ModalOverlay onClick={() => setDemoVideo(null)}>
+          <ModalContent onClick={(e) => e.stopPropagation()}>
+            <CloseButton onClick={() => setDemoVideo(null)}>✕</CloseButton>
+            <video
+              src={demoVideo}
+              controls
+              autoPlay
+              style={{ width: '100%', maxHeight: '80vh', borderRadius: '8px' }}
+            />
+          </ModalContent>
+        </ModalOverlay>
+      )}
+    </>
   );
 };
 
@@ -120,14 +142,9 @@ export default ProjectSlider;
 
 const Wrapper = styled.section`
   width: 100%;
-  /* max-width: 720px; */
   min-width: 320px;
   position: relative;
-
   cursor: pointer;
-
-  ${theme.devices.mobile} {
-  }
 `;
 
 const StyledSlider = styled(Slider)`
@@ -150,7 +167,6 @@ const StyledSlider = styled(Slider)`
     left: 0;
     width: 20px;
     height: 8px;
-    /* content: '•'; */
     content: '';
     background-color: black;
     text-align: center;
@@ -227,7 +243,6 @@ const TextContainer = styled.div`
     left: 0;
     width: 140px;
     height: 40px;
-    /* height: 100%; */
     border: 1px solid rgba(84, 80, 80, 0.4);
     content: '';
     -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
@@ -259,10 +274,9 @@ const TextContainer = styled.div`
     transform: translateY(0px) translateX(0px);
   }
 `;
+
 const Title = styled.div`
-  /* ${theme.typography.h1} */
   font-size: 40px;
-  /* font-family: var(--font-montserrat); */
   font-family: 'MontserratBold';
   font-weight: 800;
   margin-bottom: 20px;
@@ -293,9 +307,54 @@ const Desc = styled.div`
     ${theme.typography.h5}
   }
 `;
+
 const Date = styled.div`
   ${theme.typography.h5}
   font-family: 'PretendardRegular';
   font-weight: 500;
   margin-top: 16px;
+`;
+
+const ModalOverlay = styled.div`
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+`;
+
+const ModalContent = styled.div`
+  position: relative;
+  width: 90%;
+  max-width: 480px;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+`;
+
+const CloseButton = styled.button`
+  position: absolute !important;
+  top: 10px !important;
+  right: 12px !important;
+  width: 32px !important;
+  height: 32px !important;
+  min-width: unset !important;
+  padding: 0 !important;
+  font-size: 16px !important;
+  color: #fff !important;
+  background: rgba(0, 0, 0, 0.5) !important;
+  border-radius: 50% !important;
+  z-index: 10;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &:before,
+  &:after {
+    display: none !important;
+  }
 `;

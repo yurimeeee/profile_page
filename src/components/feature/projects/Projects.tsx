@@ -135,6 +135,7 @@ const Projects = () => {
       desc: '단계별 입문 커리큘럼으로 일본어를 학습할 수 있는 React Native 앱입니다. 단어 맞추기·빈칸 채우기 퀴즈로 재미있게 학습하고, 출석 체크로 학습 습관을 관리하며, 오답노트에 틀린 문제를 저장해 언제든 복습할 수 있습니다.',
       date: '진행중',
       git: 'https://github.com/yurimeeee/onebite-jp-app',
+      demo_url: '/images/site/one_bite_jp/one_bite_demo.mp4',
     },
     {
       img: '/images/site/wedding_invi/wedding_invi_main.png',
