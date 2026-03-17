@@ -114,6 +114,14 @@ const Projects = () => {
 
   const myProjectList = [
     {
+      img: '/images/site/one_bite_jp/one_bite_login.png',
+      title: 'One Bite JP',
+      sub_title: '한 입씩 배우는 일본어 앱',
+      desc: '단계별 입문 커리큘럼으로 일본어를 학습할 수 있는 React Native 앱입니다. 단어 맞추기·빈칸 채우기 퀴즈로 재미있게 학습하고, 출석 체크로 학습 습관을 관리하며, 오답노트에 틀린 문제를 저장해 언제든 복습할 수 있습니다.',
+      date: '진행중',
+      git: 'https://github.com/yurimeeee/one-bite-jp',
+    },
+    {
       img: '/images/site/wedding_invi/wedding_invi_main.png',
       title: '모바일 청첩장 제작 웹앱',
       sub_title: '마이 웨딩, My Wedding Invitation',
@@ -170,7 +178,12 @@ const Projects = () => {
 
   return (
     <Wrap id="projects">
-      <BackgroundText text="Projects" top="0" desc={'진행한 사이드 프로젝트입니다'} center />
+      <BackgroundText
+        text="Projects"
+        top="0"
+        // desc={'진행한 사이드 프로젝트입니다'}
+        center
+      />
       {/* <FlexBox
         data-aos="fade-up"
         data-aos-duration="600"
