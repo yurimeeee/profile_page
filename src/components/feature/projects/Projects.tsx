@@ -143,7 +143,7 @@ const Projects = () => {
       sub_title: '드래그 앤 드롭 업무 관리 앱',
       desc: 'React와 TypeScript로 구현한 칸반 보드 웹 애플리케이션입니다. 할 일·진행 중·완료 등 단계별로 카드를 관리하며, 드래그 앤 드롭으로 직관적인 업무 흐름을 제공합니다.',
       date: '진행중',
-      site_url: 'https://kanban-board-six-zeta.vercel.app/about',
+      site_url: 'https://kanban-board-six-zeta.vercel.app/',
       git: 'https://github.com/yurimeeee/kanban-board',
     },
     {
