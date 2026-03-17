@@ -190,15 +190,15 @@ const Projects = () => {
       site_url: 'https://yurimeeee.github.io/nyangcat-test/',
       git: 'https://github.com/yurimeeee/nyangcat-test',
     },
-    {
-      img: '/images/site/mmca/mmca_main.png',
-      title: 'MMCA 리뉴얼 Web',
-      sub_title: '국립현대미술관 리디자인 웹사이트',
-      desc: '기존 국립현대미술관 사이트의 UI/UX 문제점을 분석하고, 반응형 레이아웃과 타이포그래피 중심의 모던한 디자인으로 리디자인한 프로젝트입니다. React를 기반으로 컴포넌트화하여 유지보수성과 확장성을 고려하였으며, 추후 서브페이지 추가를 계획 중입니다.',
-      date: '23. 11. 04 - 23. 11. 08 ',
-      site_url: 'https://yurimeeee.github.io/MMCA_renewal/',
-      git: 'https://github.com/yurimeeee/MMCA_renewal',
-    },
+    // {
+    //   img: '/images/site/mmca/mmca_main.png',
+    //   title: 'MMCA 리뉴얼 Web',
+    //   sub_title: '국립현대미술관 리디자인 웹사이트',
+    //   desc: '기존 국립현대미술관 사이트의 UI/UX 문제점을 분석하고, 반응형 레이아웃과 타이포그래피 중심의 모던한 디자인으로 리디자인한 프로젝트입니다. React를 기반으로 컴포넌트화하여 유지보수성과 확장성을 고려하였으며, 추후 서브페이지 추가를 계획 중입니다.',
+    //   date: '23. 11. 04 - 23. 11. 08 ',
+    //   site_url: 'https://yurimeeee.github.io/MMCA_renewal/',
+    //   git: 'https://github.com/yurimeeee/MMCA_renewal',
+    // },
   ];
 
   return (
