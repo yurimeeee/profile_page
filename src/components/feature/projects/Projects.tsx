@@ -115,11 +115,26 @@ const Projects = () => {
   const myProjectList = [
     {
       img: '/images/site/one_bite_jp/one_bite_login.png',
+      images: [
+        '/images/site/one_bite_jp/one_bite_login.png',
+        '/images/site/one_bite_jp/one_bite_study1.png',
+        '/images/site/one_bite_jp/one_bite_study2.png',
+        '/images/site/one_bite_jp/one_bite_study3.png',
+        '/images/site/one_bite_jp/one_bite_study4.png',
+        '/images/site/one_bite_jp/one_bite_study5.png',
+        '/images/site/one_bite_jp/one_bite_study6.png',
+        '/images/site/one_bite_jp/one_bite_study7.png',
+        '/images/site/one_bite_jp/one_bite_study_result.png',
+        '/images/site/one_bite_jp/one_bite_blank_quiz1.png',
+        '/images/site/one_bite_jp/one_bite_blank_quiz2.png',
+        '/images/site/one_bite_jp/one_bite_attendance.png',
+        '/images/site/one_bite_jp/one_bite_mypage.png',
+      ],
       title: 'One Bite JP',
       sub_title: '한 입씩 배우는 일본어 앱',
       desc: '단계별 입문 커리큘럼으로 일본어를 학습할 수 있는 React Native 앱입니다. 단어 맞추기·빈칸 채우기 퀴즈로 재미있게 학습하고, 출석 체크로 학습 습관을 관리하며, 오답노트에 틀린 문제를 저장해 언제든 복습할 수 있습니다.',
       date: '진행중',
-      git: 'https://github.com/yurimeeee/one-bite-jp',
+      git: 'https://github.com/yurimeeee/onebite-jp-app',
     },
     {
       img: '/images/site/wedding_invi/wedding_invi_main.png',

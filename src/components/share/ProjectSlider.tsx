@@ -3,13 +3,14 @@ import 'slick-carousel/slick/slick-theme.css';
 
 import { FlexBox } from '@components/styled/StyledComponents';
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import styled from 'styled-components';
 import theme from '@styles/theme';
 
 interface SlideItems {
   img: string;
+  images?: string[];
   title: string;
   sub_title: string;
   desc: string;
@@ -20,6 +21,28 @@ interface SlideItems {
 interface ProjectSliderProps {
   list: SlideItems[];
 }
+
+const AutoImageSlide = ({ images }: { images: string[] }) => {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 2000);
+    return () => clearInterval(timer);
+  }, [images.length]);
+
+  return (
+    <Image
+      src={images[current]}
+      alt=""
+      width={600}
+      height={400}
+      style={{ maxWidth: '100%', maxHeight: '400px', height: 'auto', objectFit: 'contain', transition: 'opacity 0.3s ease' }}
+      unoptimized
+    />
+  );
+};
 
 const ProjectSlider = ({ list }: ProjectSliderProps) => {
   const settings = {
@@ -39,18 +62,23 @@ const ProjectSlider = ({ list }: ProjectSliderProps) => {
         {list.map((slide: SlideItems, index: number) => (
           <SlideWrap key={index}>
             <ImageContainer>
-              <Image
-                src={slide.img}
-                alt={slide.title}
-                width={600}
-                height={400}
-                style={{
-                  maxWidth: '100%',
-                  height: 'auto',
-                  objectFit: 'contain',
-                }}
-                unoptimized
-              />
+              {slide.images && slide.images.length > 0 ? (
+                <AutoImageSlide images={slide.images} />
+              ) : (
+                <Image
+                  src={slide.img}
+                  alt={slide.title}
+                  width={600}
+                  height={400}
+                  style={{
+                    maxWidth: '100%',
+                    maxHeight: '400px',
+                    height: 'auto',
+                    objectFit: 'contain',
+                  }}
+                  unoptimized
+                />
+              )}
             </ImageContainer>
             <TextContainer>
               <Title>{slide.title}</Title>
@@ -155,11 +183,16 @@ const SlideWrap = styled.div`
 
 const ImageContainer = styled.div`
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 400px;
+  overflow: hidden;
   img {
-    min-width: 100%;
-    height: 100%;
-    /* height: 400px; */
-    object-fit: cover;
+    max-width: 100%;
+    max-height: 400px;
+    height: auto;
+    object-fit: contain;
   }
 `;
 
