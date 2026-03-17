@@ -138,6 +138,15 @@ const Projects = () => {
       demo_url: '/images/site/one_bite_jp/one_bite_demo.mp4',
     },
     {
+      img: '/images/site/kanban/kanban-about.png',
+      title: 'Kanban Board',
+      sub_title: '드래그 앤 드롭 업무 관리 앱',
+      desc: 'React와 TypeScript로 구현한 칸반 보드 웹 애플리케이션입니다. 할 일·진행 중·완료 등 단계별로 카드를 관리하며, 드래그 앤 드롭으로 직관적인 업무 흐름을 제공합니다.',
+      date: '진행중',
+      site_url: 'https://kanban-board-six-zeta.vercel.app/',
+      git: 'https://github.com/yurimeeee/kanban-board',
+    },
+    {
       img: '/images/site/wedding_invi/wedding_invi_main.png',
       title: '모바일 청첩장 제작 웹앱',
       sub_title: '마이 웨딩, My Wedding Invitation',
