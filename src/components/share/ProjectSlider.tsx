@@ -14,7 +14,7 @@ interface SlideItems {
   title: string;
   sub_title: string;
   desc: string;
-  date: string;
+  date?: string;
   site_url?: string;
   git: string;
   demo_url?: string;
@@ -89,7 +89,7 @@ const ProjectSlider = ({ list }: ProjectSliderProps) => {
                 <SubTitle>{slide.sub_title}</SubTitle>
                 <Desc>
                   {slide.desc}
-                  <Date>{slide.date}</Date>
+                  {slide.date && <Date>{slide.date}</Date>}
                 </Desc>
                 <FlexBox $gap="16px" $margin={'16px 0 0 0'}>
                   {slide.demo_url && (
