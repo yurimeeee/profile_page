@@ -11,7 +11,7 @@ import styled from 'styled-components';
 import theme from '@styles/theme';
 
 const Skills = () => {
-  const frontList = ['react', 'next', 'typescript', 'javascript', 'html', 'css', 'graphql', 'jquery', 'php', 'sass', 'less', 'tailwind'];
+  const frontList = ['react', 'react-native', 'next', 'typescript', 'javascript', 'html', 'css', 'graphql', 'jquery', 'php', 'sass', 'less', 'tailwind'];
   const stateList = ['redux', 'zustand', 'recoil', 'apollo'];
   const etcList = ['photoshop', 'illustrator', 'figma', 'confluence', 'jira'];
 

@@ -118,7 +118,7 @@ const Projects = () => {
       title: 'PickS',
       sub_title: 'AI 쇼핑 큐레이터',
       desc: '상품 링크만 붙여넣으면 AI가 비교·추천·리뷰 분석까지 제공하는 쇼핑 큐레이션 서비스입니다. 네이버 쇼핑 API로 실제 상품 데이터를 연동하고, Gemini API 기반으로 상황별 큐레이션과 구매 판단을 돕는 리포트를 생성합니다. Firebase 인증, Zustand 상태 관리, 위시리스트·마이페이지 기능을 포함합니다.',
-      site_url: 'https://smart-shopping-agent-34al.vercel.app/',
+      site_url: 'https://smart-shopping-agent-picks.vercel.app/',
       git: 'https://github.com/yurimeeee/smart-shopping-agent',
     },
     {
