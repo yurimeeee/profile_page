@@ -2,11 +2,10 @@
 
 import 'aos/dist/aos.css';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import AOS from 'aos';
 import BackgroundText from '@components/share/BackgroundText';
-import { FlexBox } from '@components/styled/StyledComponents';
 import styled from 'styled-components';
 import theme from '@styles/theme';
 
@@ -35,25 +34,19 @@ const SKILL_LABELS: Record<string, string> = {
   jira: 'Jira',
 };
 
+const CATEGORIES = [
+  { key: 'front', label: 'Frontend', list: ['react', 'react-native', 'next', 'typescript', 'javascript', 'html', 'css', 'graphql', 'jquery', 'php', 'sass', 'less', 'tailwind'] },
+  { key: 'state', label: 'State management', list: ['redux', 'zustand', 'recoil', 'apollo'] },
+  { key: 'etc', label: 'Design / Communication', list: ['photoshop', 'illustrator', 'figma', 'confluence', 'jira'] },
+] as const;
+
 const Skills = () => {
-  const frontList = ['react', 'react-native', 'next', 'typescript', 'javascript', 'html', 'css', 'graphql', 'jquery', 'php', 'sass', 'less', 'tailwind'];
-  const stateList = ['redux', 'zustand', 'recoil', 'apollo'];
-  const etcList = ['photoshop', 'illustrator', 'figma', 'confluence', 'jira'];
+  const [activeKey, setActiveKey] = useState<(typeof CATEGORIES)[number]['key']>('front');
+  const active = CATEGORIES.find((category) => category.key === activeKey) ?? CATEGORIES[0];
 
   useEffect(() => {
     AOS.init();
   }, []);
-
-  const renderSkillGroup = (list: string[], folder: string) => (
-    <CustomFlex $gap="20px" $flexWrap="wrap" $justifyContent={'flex-start'}>
-      {list.map((skill, idx) => (
-        <SkillCard key={idx}>
-          <SkillImg src={`/images/skill/${folder}/${skill}.svg`} alt={skill} />
-          <SkillLabel>{SKILL_LABELS[skill] ?? skill}</SkillLabel>
-        </SkillCard>
-      ))}
-    </CustomFlex>
-  );
 
   return (
     <Wrap id="skills">
@@ -62,48 +55,24 @@ const Skills = () => {
         top="0"
         // desc={'아래 기술들을 활용해 사용자 경험을 만듭니다'}
       />
-      <FlexBox
-        data-aos-once={true}
-        data-aos="fade-up"
-        data-aos-duration="600"
-        data-aos-easing="ease-in-out"
-        $flexDirection={'column'}
-        $alignItems={'start'}
-        $padding={'30px 24px'}
-        $bgColor={theme.colors.ultraLightGrayBgColor}
-        $boxShadow={'2px 4px 12px #00000014'}
-      >
-        <Title>Frontend</Title>
-        {renderSkillGroup(frontList, 'front')}
-      </FlexBox>
-      <FlexBox
-        data-aos-once={true}
-        data-aos="fade-up"
-        data-aos-duration="600"
-        data-aos-easing="ease-in-out"
-        $flexDirection={'column'}
-        $alignItems={'start'}
-        $padding={'30px 24px'}
-        $bgColor={theme.colors.ultraLightGrayBgColor}
-        $boxShadow={'2px 4px 12px #00000014'}
-      >
-        <Title>State management</Title>
-        {renderSkillGroup(stateList, 'state')}
-      </FlexBox>
-      <FlexBox
-        data-aos-once={true}
-        data-aos="fade-up"
-        data-aos-duration="600"
-        data-aos-easing="ease-in-out"
-        $flexDirection={'column'}
-        $alignItems={'start'}
-        $padding={'30px 24px'}
-        $bgColor={theme.colors.ultraLightGrayBgColor}
-        $boxShadow={'2px 4px 12px #00000014'}
-      >
-        <Title>Design / Communication</Title>
-        {renderSkillGroup(etcList, 'etc')}
-      </FlexBox>
+
+      <Panel data-aos-once={true} data-aos="fade-up" data-aos-duration="600" data-aos-easing="ease-in-out">
+        <TabRow>
+          {CATEGORIES.map((category) => (
+            <Tab key={category.key} type="button" $active={category.key === activeKey} onClick={() => setActiveKey(category.key)}>
+              {category.label}
+            </Tab>
+          ))}
+        </TabRow>
+
+        <PillGrid key={active.key}>
+          {active.list.map((skill, idx) => (
+            <Pill key={idx}>
+              <PillLabel>{SKILL_LABELS[skill] ?? skill}</PillLabel>
+            </Pill>
+          ))}
+        </PillGrid>
+      </Panel>
     </Wrap>
   );
 };
@@ -117,7 +86,6 @@ const Wrap = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
   padding-top: 300px;
   padding-left: 36px;
   padding-right: 36px;
@@ -129,76 +97,111 @@ const Wrap = styled.div`
   }
 `;
 
-const Title = styled.div`
+const Panel = styled.div`
+  width: 100%;
+  max-width: 900px;
+`;
+
+const TabRow = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 36px;
+  border-bottom: 1px solid ${theme.colors.lightGrayBorderColor};
+  margin-bottom: 40px;
+
+  ${theme.devices.mobile} {
+    gap: 10px 20px;
+    margin-bottom: 28px;
+  }
+`;
+
+const Tab = styled.button<{ $active: boolean }>`
+  position: relative;
   font-family: 'MontserratBold';
   font-weight: 700;
-  font-size: 36px;
-  margin-bottom: 32px;
-  color: ${theme.colors.blueColor};
+  font-size: 20px;
+  white-space: nowrap;
+  padding: 0 2px 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: ${(props) => (props.$active ? theme.colors.blueColor : theme.colors.lightGrayFontColor)};
+  transition: color 0.2s ease;
 
-  ${theme.devices.mobile} {
-    font-size: 24px;
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 2px;
+    background-color: ${theme.colors.blueColor};
+    transform: scaleX(${(props) => (props.$active ? 1 : 0)});
+    transform-origin: left center;
+    transition: transform 0.25s ease;
   }
-`;
-
-const SkillCard = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 96px;
-  padding: 16px 8px;
-  border-radius: 12px;
-  background-color: ${theme.colors.whiteColor};
-  box-shadow: 2px 4px 10px #00000010;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
 
   &:hover {
-    transform: translateY(-4px);
-    box-shadow: 2px 8px 16px #00000020;
+    color: ${theme.colors.blueColor};
   }
 
-  ${theme.devices.tablet} {
-    width: 84px;
-    padding: 14px 6px;
-  }
   ${theme.devices.mobile} {
-    width: 72px;
-    padding: 12px 6px;
-    gap: 8px;
+    font-size: 15px;
+    padding-bottom: 14px;
   }
 `;
 
-const SkillImg = styled.img`
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-
-  ${theme.devices.tablet} {
-    width: 34px;
-    height: 34px;
-  }
-  ${theme.devices.mobile} {
-    width: 28px;
-    height: 28px;
+const fadeInAnimation = `
+  @keyframes skillFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 `;
 
-const SkillLabel = styled.span`
+const PillGrid = styled.div`
+  ${fadeInAnimation}
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  animation: skillFadeIn 0.4s ease;
+`;
+
+const Pill = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 12px 22px;
+  border-radius: 999px;
+  border: 1px solid ${theme.colors.lightGrayBorderColor};
+  background-color: ${theme.colors.whiteColor};
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    border-color: ${theme.colors.blueColor};
+    transform: translateY(-3px);
+    box-shadow: 2px 6px 14px #00000014;
+  }
+
+  ${theme.devices.mobile} {
+    padding: 9px 16px;
+  }
+`;
+
+const PillLabel = styled.span`
   font-family: 'ChosunNm';
   font-weight: 400;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.3;
-  text-align: center;
-  color: ${theme.colors.deepGrayFontColor};
   white-space: nowrap;
+  color: ${theme.colors.darkGrayFontColor};
 
   ${theme.devices.mobile} {
-    font-size: 11px;
+    font-size: 13px;
   }
-`;
-
-const CustomFlex = styled(FlexBox)`
-  row-gap: 16px;
 `;
