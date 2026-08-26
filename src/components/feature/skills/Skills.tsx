@@ -2,13 +2,38 @@
 
 import 'aos/dist/aos.css';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import AOS from 'aos';
 import BackgroundText from '@components/share/BackgroundText';
 import { FlexBox } from '@components/styled/StyledComponents';
 import styled from 'styled-components';
 import theme from '@styles/theme';
+
+const SKILL_LABELS: Record<string, string> = {
+  react: 'React',
+  'react-native': 'React Native',
+  next: 'Next.js',
+  typescript: 'TypeScript',
+  javascript: 'JavaScript',
+  html: 'HTML',
+  css: 'CSS',
+  graphql: 'GraphQL',
+  jquery: 'jQuery',
+  php: 'PHP',
+  sass: 'Sass',
+  less: 'Less',
+  tailwind: 'Tailwind CSS',
+  redux: 'Redux',
+  zustand: 'Zustand',
+  recoil: 'Recoil',
+  apollo: 'Apollo',
+  photoshop: 'Photoshop',
+  illustrator: 'Illustrator',
+  figma: 'Figma',
+  confluence: 'Confluence',
+  jira: 'Jira',
+};
 
 const Skills = () => {
   const frontList = ['react', 'react-native', 'next', 'typescript', 'javascript', 'html', 'css', 'graphql', 'jquery', 'php', 'sass', 'less', 'tailwind'];
@@ -19,6 +44,17 @@ const Skills = () => {
     AOS.init();
   }, []);
 
+  const renderSkillGroup = (list: string[], folder: string) => (
+    <CustomFlex $gap="20px" $flexWrap="wrap" $justifyContent={'flex-start'}>
+      {list.map((skill, idx) => (
+        <SkillCard key={idx}>
+          <SkillImg src={`/images/skill/${folder}/${skill}.svg`} alt={skill} />
+          <SkillLabel>{SKILL_LABELS[skill] ?? skill}</SkillLabel>
+        </SkillCard>
+      ))}
+    </CustomFlex>
+  );
+
   return (
     <Wrap id="skills">
       <BackgroundText
@@ -28,7 +64,7 @@ const Skills = () => {
       />
       <FlexBox
         data-aos-once={true}
-        data-aos="flip-down"
+        data-aos="fade-up"
         data-aos-duration="600"
         data-aos-easing="ease-in-out"
         $flexDirection={'column'}
@@ -38,15 +74,11 @@ const Skills = () => {
         $boxShadow={'2px 4px 12px #00000014'}
       >
         <Title>Frontend</Title>
-        <CustomFlex $gap="30px" $flexWrap="wrap" $justifyContent={'center'}>
-          {frontList.map((skill, idx) => (
-            <SkillImg key={idx} src={`/images/skill/front/${skill}.svg`} alt={skill} />
-          ))}
-        </CustomFlex>
+        {renderSkillGroup(frontList, 'front')}
       </FlexBox>
       <FlexBox
         data-aos-once={true}
-        data-aos="flip-down"
+        data-aos="fade-up"
         data-aos-duration="600"
         data-aos-easing="ease-in-out"
         $flexDirection={'column'}
@@ -56,15 +88,11 @@ const Skills = () => {
         $boxShadow={'2px 4px 12px #00000014'}
       >
         <Title>State management</Title>
-        <CustomFlex $gap="50px" $flexWrap="wrap" $justifyContent={'center'}>
-          {stateList.map((skill, idx) => (
-            <SkillImg key={idx} src={`/images/skill/state/${skill}.svg`} alt={skill} />
-          ))}
-        </CustomFlex>
+        {renderSkillGroup(stateList, 'state')}
       </FlexBox>
       <FlexBox
         data-aos-once={true}
-        data-aos="flip-down"
+        data-aos="fade-up"
         data-aos-duration="600"
         data-aos-easing="ease-in-out"
         $flexDirection={'column'}
@@ -74,11 +102,7 @@ const Skills = () => {
         $boxShadow={'2px 4px 12px #00000014'}
       >
         <Title>Design / Communication</Title>
-        <CustomFlex $gap="50px" $flexWrap="wrap" $justifyContent={'center'}>
-          {etcList.map((skill, idx) => (
-            <SkillImg key={idx} src={`/images/skill/etc/${skill}.svg`} alt={skill} />
-          ))}
-        </CustomFlex>
+        {renderSkillGroup(etcList, 'etc')}
       </FlexBox>
     </Wrap>
   );
@@ -117,19 +141,64 @@ const Title = styled.div`
   }
 `;
 
-const SkillImg = styled.img`
+const SkillCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 96px;
+  padding: 16px 8px;
+  border-radius: 12px;
+  background-color: ${theme.colors.whiteColor};
+  box-shadow: 2px 4px 10px #00000010;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 2px 8px 16px #00000020;
+  }
+
   ${theme.devices.tablet} {
-    scale: 0.8;
+    width: 84px;
+    padding: 14px 6px;
   }
   ${theme.devices.mobile} {
-    scale: 0.6;
+    width: 72px;
+    padding: 12px 6px;
+    gap: 8px;
   }
 `;
-const CustomFlex = styled(FlexBox)`
+
+const SkillImg = styled.img`
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+
   ${theme.devices.tablet} {
-    gap: 20px;
+    width: 34px;
+    height: 34px;
   }
   ${theme.devices.mobile} {
-    gap: 20px;
+    width: 28px;
+    height: 28px;
   }
+`;
+
+const SkillLabel = styled.span`
+  font-family: 'ChosunNm';
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.3;
+  text-align: center;
+  color: ${theme.colors.deepGrayFontColor};
+  white-space: nowrap;
+
+  ${theme.devices.mobile} {
+    font-size: 11px;
+  }
+`;
+
+const CustomFlex = styled(FlexBox)`
+  row-gap: 16px;
 `;
